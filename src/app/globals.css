@@ -1,0 +1,91 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+
+  --color-tertiary-fixed-dim: #e9c349;
+  --color-on-tertiary: #ffffff;
+  --color-on-tertiary-container: #8f7200;
+  --color-surface-container-highest: #e2e2e2;
+  --color-on-secondary-container: #656357;
+  --color-surface-dim: #dadada;
+  --color-on-secondary: #ffffff;
+  --color-secondary-container: #e4dfd1;
+  --color-on-secondary-fixed-variant: #49473c;
+  --color-on-primary-container: #747676;
+  --color-surface-tint: #5d5f5f;
+  --color-surface-container: #eeeeee;
+  --color-on-surface-variant: #444748;
+  --color-primary-fixed-dim: #c6c6c7;
+  --color-tertiary-fixed: #ffe088;
+  --color-surface-bright: #f9f9f9;
+  --color-on-error-container: #93000a;
+  --color-outline: #747878;
+  --color-surface-variant: #e2e2e2;
+  --color-outline-variant: #c4c7c8;
+  --color-on-background: #1b1b1b;
+  --color-surface-container-lowest: #ffffff;
+  --color-inverse-on-surface: #f1f1f1;
+  --color-surface-container-high: #e8e8e8;
+  --color-on-primary-fixed-variant: #454747;
+  --color-on-surface: #1b1b1b;
+  --color-inverse-primary: #c6c6c7;
+  --color-error-container: #ffdad6;
+  --color-on-tertiary-fixed: #241a00;
+  --color-primary: #5d5f5f;
+  --color-on-primary-fixed: #1a1c1c;
+  --color-tertiary-container: #ffffff;
+  --color-on-secondary-fixed: #1d1c13;
+  --color-tertiary: #735c00;
+  --color-secondary: #615e53;
+  --color-surface: #f9f9f9;
+  --color-on-primary: #ffffff;
+  --color-on-error: #ffffff;
+  --color-error: #ba1a1a;
+  --color-surface-container-low: #f3f3f3;
+  --color-primary-fixed: #e2e2e2;
+  --color-secondary-fixed-dim: #cbc6b8;
+  --color-primary-container: #ffffff;
+  --color-secondary-fixed: #e7e2d4;
+  --color-on-tertiary-fixed-variant: #574500;
+  --color-inverse-surface: #303030;
+  --color-background: #f9f9f9;
+  --spacing-unit: 8px;
+  --spacing-margin-desktop: 64px;
+  --spacing-gutter: 24px;
+  --spacing-section-gap: 80px;
+  --spacing-container-max: 1140px;
+  --spacing-margin-mobile: 20px;
+  --radius: 0.25rem;
+  --radius-lg: 0.5rem;
+  --radius-xl: 0.75rem;
+  --radius-full: 9999px;
+  --font-label-caps: "EB Garamond";
+  --font-display-lg-mobile: "Myriad Pro", Myriad, sans-serif;
+  --font-headline-md: "Myriad Pro", Myriad, sans-serif;
+  --font-body-md: "EB Garamond";
+  --font-body-lg: "EB Garamond";
+  --font-display-lg: "Myriad Pro", Myriad, sans-serif;
+  --font-headline-sm: "Myriad Pro", Myriad, sans-serif;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
