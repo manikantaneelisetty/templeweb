@@ -5,3 +5,5 @@ export default function Page() {
   return <ScreenRenderer htmlContent={homeHtml} />;
 }
 
+
+// force reload
