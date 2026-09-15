@@ -5,14 +5,14 @@ export const donateHtml = `
 <a class="font-headline-md text-headline-md tracking-widest text-primary dark:text-on-surface hover:opacity-80 transition-opacity" href="#">
                 SANCTUARY
             </a>
-<nav class="hidden md:flex gap-8 items-center font-headline-sm text-headline-sm">
-<a class="text-on-surface-variant dark:text-on-surface-variant/70 hover:text-primary transition-colors duration-300" href="#">Home</a>
-<a class="text-on-surface-variant dark:text-on-surface-variant/70 hover:text-primary transition-colors duration-300" href="#">About</a>
-<a class="text-on-surface-variant dark:text-on-surface-variant/70 hover:text-primary transition-colors duration-300" href="#">Darshan</a>
-<a class="text-on-surface-variant dark:text-on-surface-variant/70 hover:text-primary transition-colors duration-300" href="#">Events</a>
-<a class="text-primary dark:text-on-surface border-b-2 border-primary pb-1" href="#">Donate</a>
-<a class="text-on-surface-variant dark:text-on-surface-variant/70 hover:text-primary transition-colors duration-300" href="#">Contact</a>
-</nav>
+<div class="hidden md:flex items-center gap-gutter font-label-caps text-label-caps uppercase tracking-wider">
+<a class="text-on-surface-variant hover:text-orange-500 transition-colors duration-300 hover:text-on-background transition-colors duration-300 hover:opacity-80" href="/">Home</a>
+<a class="text-on-surface-variant hover:text-orange-500 transition-colors duration-300 hover:text-on-background transition-colors duration-300 hover:opacity-80" href="/about">About</a>
+<a class="text-on-surface-variant hover:text-orange-500 transition-colors duration-300 hover:text-on-background transition-colors duration-300 hover:opacity-80" href="/darshan">Darshan</a>
+<a class="text-on-surface-variant hover:text-orange-500 transition-colors duration-300 hover:text-on-background transition-colors duration-300 hover:opacity-80" href="/gallery">Gallery</a>
+<a class="text-on-surface-variant hover:text-orange-500 transition-colors duration-300 hover:text-on-background transition-colors duration-300 hover:opacity-80" href="/services">Services</a>
+<a class="text-on-surface-variant hover:text-orange-500 transition-colors duration-300 hover:text-on-background transition-colors duration-300 hover:opacity-80" href="/contact">Contact</a>
+</div>
 <button class="bg-primary text-on-primary px-6 py-2 hover:bg-[#3A3A3A] transition-all duration-300 hover:-translate-y-0.5 font-label-md text-label-md uppercase">
                 Visit
             </button>

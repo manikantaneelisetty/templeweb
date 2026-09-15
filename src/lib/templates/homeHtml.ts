@@ -1,16 +1,16 @@
-﻿export const homeHtml = `
+export const homeHtml = `
 <!-- TopNavBar -->
 <nav class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-margin-desktop py-6 bg-surface/90 border-b border-surface-variant/50 backdrop-blur-md">
 <a class="font-headline-md text-base md:text-2xl text-on-background hover:text-orange-500 transition-colors duration-300 uppercase tracking-widest hover:opacity-80 transition-opacity duration-300" href="#">
         Temple Sanctuary
     </a>
 <div class="hidden md:flex items-center gap-gutter font-label-caps text-label-caps uppercase tracking-wider">
-<a aria-current="page" class="text-on-background hover:text-orange-500 transition-colors duration-300 border-b-2 border-tertiary-fixed-dim pb-1 translate-y-[-2px] transition-transform duration-300" href="#">Home</a>
-<a class="text-on-surface-variant hover:text-orange-500 transition-colors duration-300 hover:text-on-background hover:text-orange-500 transition-colors duration-300 transition-colors duration-300 hover:opacity-80" href="#">About</a>
-<a class="text-on-surface-variant hover:text-orange-500 transition-colors duration-300 hover:text-on-background hover:text-orange-500 transition-colors duration-300 transition-colors duration-300 hover:opacity-80" href="#">Darshan</a>
-<a class="text-on-surface-variant hover:text-orange-500 transition-colors duration-300 hover:text-on-background hover:text-orange-500 transition-colors duration-300 transition-colors duration-300 hover:opacity-80" href="#">Events</a>
-<a class="text-on-surface-variant hover:text-orange-500 transition-colors duration-300 hover:text-on-background hover:text-orange-500 transition-colors duration-300 transition-colors duration-300 hover:opacity-80" href="#">Donate</a>
-<a class="text-on-surface-variant hover:text-orange-500 transition-colors duration-300 hover:text-on-background hover:text-orange-500 transition-colors duration-300 transition-colors duration-300 hover:opacity-80" href="#">Contact</a>
+<a aria-current="page" class="text-on-background hover:text-orange-500 transition-colors duration-300 border-b-2 border-tertiary-fixed-dim pb-1 translate-y-[-2px] transition-transform duration-300" href="/">Home</a>
+<a class="text-on-surface-variant hover:text-orange-500 transition-colors duration-300 hover:text-on-background transition-colors duration-300 hover:opacity-80" href="/about">About</a>
+<a class="text-on-surface-variant hover:text-orange-500 transition-colors duration-300 hover:text-on-background transition-colors duration-300 hover:opacity-80" href="/darshan">Darshan</a>
+<a class="text-on-surface-variant hover:text-orange-500 transition-colors duration-300 hover:text-on-background transition-colors duration-300 hover:opacity-80" href="/gallery">Gallery</a>
+<a class="text-on-surface-variant hover:text-orange-500 transition-colors duration-300 hover:text-on-background transition-colors duration-300 hover:opacity-80" href="/services">Services</a>
+<a class="text-on-surface-variant hover:text-orange-500 transition-colors duration-300 hover:text-on-background transition-colors duration-300 hover:opacity-80" href="/contact">Contact</a>
 </div>
 <button class="hidden md:inline-flex items-center justify-center bg-gradient-to-r from-tertiary-fixed to-tertiary-fixed-dim text-on-tertiary-fixed font-label-caps text-label-caps uppercase tracking-wider px-8 py-3 rounded-full shadow-md hover:shadow-xl hover:-translate-y-[2px] transition-all duration-500 border-2 border-tertiary-fixed-dim/50 ring-2 ring-tertiary-fixed/20">
         Visit

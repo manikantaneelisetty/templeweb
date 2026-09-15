@@ -1,146 +1,135 @@
 export const contactHtml = `
-<!-- Navigation (TopNavBar) -->
-<nav class="fixed top-0 w-full z-50 bg-surface/90 backdrop-blur-md border-b border-outline-variant/30 transition-all duration-300 ease-in-out">
-<div class="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-6 max-w-container-max mx-auto">
-<a class="font-headline-md text-headline-md tracking-widest text-primary" href="/">SANCTUARY</a>
-<div class="hidden md:flex gap-8 items-center">
-<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors duration-300" href="/home">Home</a>
-<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors duration-300" href="/about">About</a>
-<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors duration-300" href="/darshan">Darshan</a>
-<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors duration-300" href="/events">Events</a>
-<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors duration-300" href="/donate">Donate</a>
-<a class="font-label-md text-label-md text-primary border-b-2 border-primary pb-1" href="/contact">Contact</a>
-</div>
-<a class="hidden md:inline-block px-6 py-3 bg-primary text-on-primary font-label-md text-label-md hover:bg-[#3A3A3A] transition-all duration-300 transform hover:-translate-y-0.5" href="/visit">Visit</a>
-<!-- Mobile Menu Toggle -->
-<button class="md:hidden text-primary">
-<span class="material-symbols-outlined" data-icon="menu">menu</span>
-</button>
-</div>
+<!-- Navigation -->
+<nav class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-margin-desktop py-6 bg-surface/90 border-b border-surface-variant/50 backdrop-blur-md">
+    <a class="font-headline-md text-base md:text-2xl text-on-background hover:text-orange-500 transition-colors duration-300 uppercase tracking-widest hover:opacity-80" href="/">
+        Temple Sanctuary
+    </a>
+    <div class="hidden md:flex items-center gap-gutter font-label-caps text-label-caps uppercase tracking-wider">
+        <a class="text-on-surface-variant hover:text-orange-500 transition-colors duration-300" href="/">Home</a>
+        <a class="text-on-surface-variant hover:text-orange-500 transition-colors duration-300" href="/about">About</a>
+        <a class="text-on-surface-variant hover:text-orange-500 transition-colors duration-300" href="/darshan">Darshan</a>
+        <a class="text-on-surface-variant hover:text-orange-500 transition-colors duration-300" href="/gallery">Gallery</a>
+        <a class="text-on-surface-variant hover:text-orange-500 transition-colors duration-300" href="/services">Services</a>
+        <a aria-current="page" class="text-on-background border-b-2 border-tertiary-fixed-dim pb-1 translate-y-[-2px]" href="/contact">Contact</a>
+    </div>
+    <button class="hidden md:inline-flex items-center justify-center bg-gradient-to-r from-tertiary-fixed to-tertiary-fixed-dim text-on-tertiary-fixed font-label-caps text-label-caps uppercase tracking-wider px-8 py-3 rounded-full shadow-md hover:shadow-xl hover:-translate-y-[2px] transition-all duration-500 border-2 border-tertiary-fixed-dim/50 ring-2 ring-tertiary-fixed/20">
+        Visit
+    </button>
+    <button aria-label="Menu" class="md:hidden text-on-background hover:text-orange-500 transition-colors duration-300">
+        <span class="material-symbols-outlined" style="font-size: 28px;">menu</span>
+    </button>
 </nav>
-<main class="pt-[120px]">
-<!-- Hero Section -->
-<section class="relative w-full min-h-[614px] flex items-center justify-center px-margin-mobile md:px-margin-desktop py-section-gap">
-<div class="max-w-container-max mx-auto text-center z-10 w-full">
-<h1 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-primary slide-up mb-6">Connect with the Sanctuary</h1>
-<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto slide-up delay-100">
-                    Reach out to our guides for spiritual guidance, visit inquiries, or simply to share your thoughts. We welcome all seekers with open hearts.
-                </p>
-</div>
-<div class="absolute inset-0 z-0 pointer-events-none overflow-hidden opacity-30">
-<img class="w-full h-full object-cover" data-alt="A serene, minimalist spiritual sanctuary background with soft, diffused sunlight filtering through large architectural arches. The scene is bathed in high-key, ethereal white and cream tones, evoking a profound sense of peace and divine clarity. Subtle dust motes float in the gentle light rays. The overall aesthetic is clean, modern, and deeply calming." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCnwNhC18QabZgthVDkBHWVMOtHq3g1VGqspuP_EgIOe74jweKaVmOWLC-oT1MvaMaBUt91XckZEgDBzbDSk5ZqYpnABiCeudaMBARFAdxAYq87GtnK6jfoKt7Hyprryzea08yyXXf72SMjVm1S9Kx1h2Vz-iQjTDnbxno5hYXoHemt_2N2yrTTwX2ggrrdOz8RcVcPZZvo1QSFJ8akear9rHpxQ84LFVby_ljCll9lXAXidJLW0ISf"/>
-</div>
-</section>
-<!-- Contact Bento Grid -->
-<section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-section-gap slide-up delay-200">
-<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
-<!-- Form Area (Left) -->
-<div class="lg:col-span-7 bg-surface-container-lowest p-8 md:p-12 border border-outline-variant/30 relative">
-<h2 class="font-headline-md text-headline-md text-primary mb-8">Send a Message</h2>
-<form class="space-y-8">
-<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-<div class="flex flex-col">
-<label class="font-label-md text-label-md text-on-surface-variant mb-2" for="name">NAME</label>
-<input class="input-minimal w-full font-body-md text-body-md py-2" id="name" name="name" placeholder="Your full name" type="text"/>
-</div>
-<div class="flex flex-col">
-<label class="font-label-md text-label-md text-on-surface-variant mb-2" for="email">EMAIL</label>
-<input class="input-minimal w-full font-body-md text-body-md py-2" id="email" name="email" placeholder="your@email.com" type="email"/>
-</div>
-</div>
-<div class="flex flex-col">
-<label class="font-label-md text-label-md text-on-surface-variant mb-2" for="subject">SUBJECT</label>
-<input class="input-minimal w-full font-body-md text-body-md py-2" id="subject" name="subject" placeholder="How can we help?" type="text"/>
-</div>
-<div class="flex flex-col">
-<label class="font-label-md text-label-md text-on-surface-variant mb-2" for="message">MESSAGE</label>
-<textarea class="input-minimal w-full font-body-md text-body-md py-2 resize-none" id="message" name="message" placeholder="Write your message here..." rows="4"></textarea>
-</div>
-<button class="px-8 py-4 bg-primary text-on-primary font-label-md text-label-md hover:bg-[#3A3A3A] transition-all duration-300 transform hover:-translate-y-0.5 mt-8 inline-flex items-center gap-2" type="submit">
-                            SEND MESSAGE
-                            <span class="material-symbols-outlined text-[18px]" data-icon="arrow_forward">arrow_forward</span>
-</button>
-</form>
-</div>
-<!-- Info & Map Area (Right) -->
-<div class="lg:col-span-5 flex flex-col gap-gutter">
-<!-- Contact Details Card -->
-<div class="bg-surface-container p-8 md:p-12 h-full flex flex-col justify-center border-l-4 border-secondary-fixed">
-<div class="space-y-8">
-<div>
-<h3 class="font-label-md text-label-md text-on-surface-variant mb-3">OFFICE HOURS</h3>
-<p class="font-body-lg text-body-lg text-primary">Mon-Sun, 6:00 AM – 8:00 PM</p>
-</div>
-<div>
-<h3 class="font-label-md text-label-md text-on-surface-variant mb-3">DIRECT INQUIRIES</h3>
-<p class="font-body-lg text-body-lg text-primary mb-1">hello@sanctuary.org</p>
-<p class="font-body-lg text-body-lg text-primary">+91 40 2345 6789</p>
-</div>
-<div>
-<h3 class="font-label-md text-label-md text-on-surface-variant mb-3">LOCATION</h3>
-<p class="font-body-lg text-body-lg text-primary leading-relaxed">
-                                    Spiritual Sanctuary<br/>
-                                    Jubilee Hills, Phase III<br/>
-                                    Hyderabad, Telangana 500033
-                                </p>
-</div>
-</div>
-</div>
-</div>
-<!-- Map Span Full -->
-<div class="lg:col-span-12 h-[400px] bg-surface-container-low border border-outline-variant/30 mt-gutter relative overflow-hidden group">
-<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-80 mix-blend-luminosity" data-location="Hyderabad" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBEJE-CbXU0ikrqcs4eRBhw62zKF9I2bRjA2rfMKaMt898zVQXZEf0hvdKimDWCA5yQWY3r2wlyxIwT27nsZbnTSVP_tQV95Rj7cFa4qEI9yOhJib9jf5v9EunIqLV1yhgqQZUKIH_uRx9kOoBa02Z72Og7Ku5-ZJ5f2O0Am46iHwUpWbly3tpajbfF8z6cIkxTMbDA6eLHnAlDNMnBcE8AYLha7pw_hot55Y5-JvF0AGQnqVRK5VuG"/>
-<div class="absolute inset-0 bg-primary/5 pointer-events-none"></div>
-<!-- Map Pin -->
-<div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-primary flex flex-col items-center drop-shadow-md">
-<span class="material-symbols-outlined text-[40px] drop-shadow-lg" data-icon="location_on" data-weight="fill">location_on</span>
-<div class="bg-surface px-3 py-1 font-label-md text-label-md text-primary mt-2 shadow-sm whitespace-nowrap">SANCTUARY</div>
-</div>
-</div>
-</div>
-</section>
-<!-- FAQ Section -->
-<section class="max-w-[800px] mx-auto px-margin-mobile md:px-margin-desktop py-section-gap slide-up delay-300">
-<div class="text-center mb-16">
-<h2 class="font-headline-lg md:font-headline-lg text-headline-lg text-primary">Visitor Guidelines</h2>
-<div class="w-16 h-px bg-secondary-fixed mx-auto mt-6"></div>
-</div>
-<div class="space-y-6">
-<!-- FAQ Item 1 -->
-<div class="border-b border-secondary-fixed pb-6">
-<h3 class="font-headline-sm text-headline-sm text-primary mb-3">What is the dress code?</h3>
-<p class="font-body-md text-body-md text-on-surface-variant">We ask visitors to wear modest, comfortable clothing. Shoulders and knees should be covered as a sign of respect for the sacred space.</p>
-</div>
-<!-- FAQ Item 2 -->
-<div class="border-b border-secondary-fixed pb-6">
-<h3 class="font-headline-sm text-headline-sm text-primary mb-3">Do I need to book in advance?</h3>
-<p class="font-body-md text-body-md text-on-surface-variant">General visits do not require booking. However, if you wish to participate in guided meditation sessions or special darshan, prior registration is highly recommended.</p>
-</div>
-<!-- FAQ Item 3 -->
-<div class="border-b border-secondary-fixed pb-6">
-<h3 class="font-headline-sm text-headline-sm text-primary mb-3">Is photography allowed?</h3>
-<p class="font-body-md text-body-md text-on-surface-variant">Photography is permitted in the outer gardens. To maintain the sanctity and focus of the inner meditation halls, all electronic devices must be turned off before entering.</p>
-</div>
-</div>
-</section>
+
+<style>
+  @keyframes instantFadeUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+  @keyframes instantReveal { from { opacity: 0; clip-path: inset(0 100% 0 0); } to { opacity: 1; clip-path: inset(0 0 0 0); } }
+  .hero-fade-up { animation: instantFadeUp 0.6s ease-out forwards; opacity: 0; }
+  .hero-reveal { animation: instantReveal 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards; opacity: 0; }
+  .scroll-anim { will-change: transform, opacity, clip-path; }
+  .scroll-fade-left { opacity: 0; transform: translateX(-40px); transition: opacity 0.6s ease-out, transform 0.6s ease-out; }
+  .scroll-fade-left.is-visible { opacity: 1; transform: translateX(0); }
+  .scroll-fade-right { opacity: 0; transform: translateX(40px); transition: opacity 0.6s ease-out, transform 0.6s ease-out; }
+  .scroll-fade-right.is-visible { opacity: 1; transform: translateX(0); }
+  .scroll-fade-up { opacity: 0; transform: translateY(40px); transition: opacity 0.6s ease-out, transform 0.6s ease-out; }
+  .scroll-fade-up.is-visible { opacity: 1; transform: translateY(0); }
+  .scroll-reveal-text { opacity: 0; clip-path: inset(0 100% 0 0); transition: opacity 0.7s ease-out, clip-path 0.7s cubic-bezier(0.2, 0.8, 0.2, 1); }
+  .scroll-reveal-text.is-visible { opacity: 1; clip-path: inset(0 0 0 0); }
+  .anim-delay-1 { animation-delay: 0.1s; transition-delay: 0.1s; }
+  .anim-delay-2 { animation-delay: 0.2s; transition-delay: 0.2s; }
+  .anim-delay-3 { animation-delay: 0.3s; transition-delay: 0.3s; }
+</style>
+
+<main class="bg-surface overflow-hidden pt-24 relative">
+
+  <!-- Section 1: Hero & Contact Info -->
+  <section class="w-full min-h-screen relative flex items-center bg-surface py-20 z-10 overflow-hidden">
+    <div class="w-full h-full px-margin-mobile lg:px-margin-desktop flex flex-col lg:flex-row gap-12 lg:gap-16 items-center z-10 relative">
+      <div class="w-full lg:w-1/2 flex flex-col justify-center scroll-anim scroll-fade-left">
+        <span class="font-label-caps text-2xl md:text-4xl text-tertiary-fixed-dim uppercase tracking-[0.3em] mb-0">Get in Touch</span>
+        <h1 class="font-display-lg text-7xl md:text-[6.5rem] lg:text-[8rem] leading-tight mb-2 text-on-background drop-shadow-sm hero-reveal anim-delay-1">
+          Contact <span class="text-tertiary-fixed-dim italic font-['EB_Garamond']">Us</span>
+        </h1>
+        <p class="font-body-md text-xl md:text-2xl text-on-surface-variant leading-relaxed mb-8 max-w-2xl hero-fade-up anim-delay-2">
+          We welcome your inquiries, feedback, and presence. Reach out to the temple administration for any assistance.
+        </p>
+        
+        <div class="flex flex-col gap-6 scroll-anim scroll-fade-left anim-delay-3">
+          <div class="flex items-center gap-5">
+            <div class="w-14 h-14 rounded-2xl bg-tertiary-container/50 flex items-center justify-center shrink-0">
+              <span class="material-symbols-outlined text-3xl text-on-tertiary-container">location_on</span>
+            </div>
+            <div>
+              <h3 class="font-headline-sm text-2xl text-on-background">Location</h3>
+              <p class="text-on-surface-variant text-lg">123 Sacred Path, Banjara Hills, Hyderabad 500034</p>
+            </div>
+          </div>
+          <div class="flex items-center gap-5">
+            <div class="w-14 h-14 rounded-2xl bg-tertiary-container/50 flex items-center justify-center shrink-0">
+              <span class="material-symbols-outlined text-3xl text-on-tertiary-container">phone</span>
+            </div>
+            <div>
+              <h3 class="font-headline-sm text-2xl text-on-background">Phone</h3>
+              <p class="text-on-surface-variant text-lg">+91 98765 43210</p>
+            </div>
+          </div>
+          <div class="flex items-center gap-5">
+            <div class="w-14 h-14 rounded-2xl bg-tertiary-container/50 flex items-center justify-center shrink-0">
+              <span class="material-symbols-outlined text-3xl text-on-tertiary-container">mail</span>
+            </div>
+            <div>
+              <h3 class="font-headline-sm text-2xl text-on-background">Email</h3>
+              <p class="text-on-surface-variant text-lg">info@templesanctuary.org</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Contact Form -->
+      <div class="w-full lg:w-1/2 relative scroll-anim scroll-fade-up anim-delay-2">
+        <div class="bg-white/40 dark:bg-white/5 backdrop-blur-xl p-8 lg:p-12 rounded-[3rem] shadow-2xl border border-surface-variant/30">
+          <h3 class="font-headline-lg text-3xl text-on-background mb-6">Send a Message</h3>
+          <form class="flex flex-col gap-6">
+            <div class="flex flex-col gap-2">
+                <label class="font-label-caps uppercase tracking-wider text-sm text-on-surface-variant">Name</label>
+                <input type="text" class="w-full bg-surface-container-highest border border-outline/50 rounded-xl px-4 py-3 focus:outline-none focus:border-tertiary-fixed focus:ring-1 focus:ring-tertiary-fixed transition-colors" placeholder="Your Name">
+            </div>
+            <div class="flex flex-col gap-2">
+                <label class="font-label-caps uppercase tracking-wider text-sm text-on-surface-variant">Email</label>
+                <input type="email" class="w-full bg-surface-container-highest border border-outline/50 rounded-xl px-4 py-3 focus:outline-none focus:border-tertiary-fixed focus:ring-1 focus:ring-tertiary-fixed transition-colors" placeholder="your@email.com">
+            </div>
+            <div class="flex flex-col gap-2">
+                <label class="font-label-caps uppercase tracking-wider text-sm text-on-surface-variant">Message</label>
+                <textarea rows="4" class="w-full bg-surface-container-highest border border-outline/50 rounded-xl px-4 py-3 focus:outline-none focus:border-tertiary-fixed focus:ring-1 focus:ring-tertiary-fixed transition-colors" placeholder="How can we help?"></textarea>
+            </div>
+            <button type="button" class="mt-2 w-full bg-tertiary-fixed text-on-tertiary-fixed py-4 rounded-xl font-label-caps uppercase tracking-wider text-base shadow-md hover:bg-tertiary-fixed-dim hover:shadow-lg transition-all duration-300">
+                Submit
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
 </main>
-<!-- Footer -->
-<footer class="w-full mt-section-gap bg-tertiary-container text-tertiary-fixed-dim py-section-gap fade-in">
-<div class="flex flex-col md:flex-row justify-between items-start w-full px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto gap-8">
-<div class="flex flex-col gap-4">
-<span class="font-headline-sm text-headline-sm text-tertiary-fixed">SANCTUARY</span>
-<p class="font-body-md text-body-md max-w-sm text-on-tertiary-container">A space for divine clarity and quiet contemplation in the modern world.</p>
-</div>
-<div class="flex flex-col md:flex-row gap-8 md:gap-16">
-<div class="flex flex-col gap-4">
-<a class="font-body-md text-body-md text-tertiary-fixed-dim hover:text-surface-bright transition-opacity duration-300" href="/privacy">Privacy Policy</a>
-<a class="font-body-md text-body-md text-tertiary-fixed-dim hover:text-surface-bright transition-opacity duration-300" href="/terms">Terms of Service</a>
-<a class="font-body-md text-body-md text-tertiary-fixed-dim hover:text-surface-bright transition-opacity duration-300" href="/volunteer">Volunteer</a>
-</div>
-</div>
-</div>
-<div class="w-full px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto mt-16 pt-8 border-t border-outline-variant/10">
-<p class="font-body-md text-body-md text-on-tertiary-container">© 2024 Spiritual Sanctuary. All Rights Reserved.</p>
-</div>
-</footer>
+
+<script>
+  (function() {
+    function initObserver() {
+      if (!('IntersectionObserver' in window)) return;
+      var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if(entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+      document.querySelectorAll('.scroll-anim:not([data-observed])').forEach(function(el) {
+        el.dataset.observed = 'true';
+        observer.observe(el);
+      });
+    }
+    setInterval(initObserver, 100);
+  })();
+</script>
 `;

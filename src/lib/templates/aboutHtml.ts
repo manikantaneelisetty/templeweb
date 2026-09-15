@@ -7,10 +7,10 @@ export const aboutHtml = `
     <div class="hidden md:flex items-center gap-gutter font-label-caps text-label-caps uppercase tracking-wider">
         <a class="text-on-surface-variant hover:text-orange-500 transition-colors duration-300 hover:text-on-background transition-colors duration-300 hover:opacity-80" href="/">Home</a>
         <a aria-current="page" class="text-on-background hover:text-orange-500 transition-colors duration-300 border-b-2 border-tertiary-fixed-dim pb-1 translate-y-[-2px] transition-transform duration-300" href="/about">About</a>
-        <a class="text-on-surface-variant hover:text-orange-500 transition-colors duration-300 hover:text-on-background transition-colors duration-300 hover:opacity-80" href="#">Darshan</a>
-        <a class="text-on-surface-variant hover:text-orange-500 transition-colors duration-300 hover:text-on-background transition-colors duration-300 hover:opacity-80" href="#">Events</a>
-        <a class="text-on-surface-variant hover:text-orange-500 transition-colors duration-300 hover:text-on-background transition-colors duration-300 hover:opacity-80" href="#">Donate</a>
-        <a class="text-on-surface-variant hover:text-orange-500 transition-colors duration-300 hover:text-on-background transition-colors duration-300 hover:opacity-80" href="#">Contact</a>
+        <a class="text-on-surface-variant hover:text-orange-500 transition-colors duration-300 hover:text-on-background transition-colors duration-300 hover:opacity-80" href="/darshan">Darshan</a>
+        <a class="text-on-surface-variant hover:text-orange-500 transition-colors duration-300 hover:text-on-background transition-colors duration-300 hover:opacity-80" href="/gallery">Gallery</a>
+        <a class="text-on-surface-variant hover:text-orange-500 transition-colors duration-300 hover:text-on-background transition-colors duration-300 hover:opacity-80" href="/services">Services</a>
+        <a class="text-on-surface-variant hover:text-orange-500 transition-colors duration-300 hover:text-on-background transition-colors duration-300 hover:opacity-80" href="/contact">Contact</a>
     </div>
     <button class="hidden md:inline-flex items-center justify-center bg-gradient-to-r from-tertiary-fixed to-tertiary-fixed-dim text-on-tertiary-fixed font-label-caps text-label-caps uppercase tracking-wider px-8 py-3 rounded-full shadow-md hover:shadow-xl hover:-translate-y-[2px] transition-all duration-500 border-2 border-tertiary-fixed-dim/50 ring-2 ring-tertiary-fixed/20">
         Visit
@@ -58,7 +58,7 @@ export const aboutHtml = `
     <!-- Centered Text Content -->
     <div class="w-full max-w-4xl mx-auto px-margin-mobile lg:px-margin-desktop text-center z-10 relative flex flex-col items-center">
       <span class="font-label-caps text-2xl md:text-4xl text-tertiary-fixed-dim uppercase tracking-[0.3em] mb-2 hero-fade-up">The Sanctum</span>
-      <h1 class="font-display-lg text-6xl md:text-8xl lg:text-[7rem] leading-tight mb-4 text-on-background drop-shadow-sm hero-reveal anim-delay-1">
+      <h1 class="font-display-lg text-7xl md:text-[6.5rem] lg:text-[8rem] leading-tight mb-4 text-on-background drop-shadow-sm hero-reveal anim-delay-1">
         Awaken the <span class="text-tertiary-fixed-dim italic font-['EB_Garamond']">Divine</span> Within
       </h1>
       <p class="font-body-md text-xl md:text-2xl text-on-surface-variant leading-relaxed mb-6 max-w-2xl mx-auto hero-fade-up anim-delay-2">
@@ -110,7 +110,7 @@ export const aboutHtml = `
       <!-- Text Content -->
       <div class="w-full lg:w-1/2 flex flex-col justify-center scroll-anim scroll-fade-left">
         <span class="font-label-caps text-2xl md:text-4xl text-[#ffdfba]/80 uppercase tracking-[0.3em] mb-2">The Origins</span>
-        <h2 class="font-display-lg text-6xl md:text-8xl leading-tight text-white mb-4 drop-shadow-md scroll-anim scroll-reveal-text anim-delay-1">
+        <h2 class="font-display-lg text-7xl md:text-[6.5rem] lg:text-[7rem] leading-tight text-white mb-4 drop-shadow-md scroll-anim scroll-reveal-text anim-delay-1">
           A Legacy of <span class="italic font-['EB_Garamond'] text-[#ffdfba]">Light</span>
         </h2>
         <p class="font-body-md text-xl md:text-2xl text-white/90 leading-relaxed mb-2 scroll-anim scroll-fade-left anim-delay-2">
@@ -148,42 +148,48 @@ export const aboutHtml = `
       
       <!-- Text Content -->
       <div class="w-full lg:w-1/2 flex flex-col justify-center scroll-anim scroll-fade-left">
-        <span class="font-label-caps text-2xl md:text-4xl text-tertiary-fixed-dim uppercase tracking-[0.3em] mb-2">Pilgrim Guidelines</span>
-        <h2 class="font-display-lg text-6xl md:text-8xl leading-tight text-on-background mb-4 scroll-anim scroll-reveal-text anim-delay-1">
-          Walking the <span class="italic font-['EB_Garamond'] text-green-600">Sacred Path</span>
+        <span class="font-label-caps text-2xl md:text-4xl text-tertiary-fixed-dim uppercase tracking-[0.3em] mb-0">Sacred Path</span>
+        <h2 class="font-display-lg text-7xl md:text-[6.5rem] lg:text-[7rem] leading-tight text-on-background mb-2 scroll-anim scroll-reveal-text anim-delay-1">
+          Pilgrim <span class="italic font-['EB_Garamond'] text-green-600">Guidelines</span>
         </h2>
-        <p class="font-body-md text-xl md:text-2xl text-on-surface-variant leading-relaxed mb-2 scroll-anim scroll-fade-left anim-delay-2">
+        <p class="font-body-md text-xl md:text-2xl text-on-surface-variant leading-relaxed mb-6 scroll-anim scroll-fade-left anim-delay-2">
           To maintain the purity and tranquility of the temple environment, we kindly request all devotees to observe these harmonious practices.
         </p>
 
-        <div class="space-y-4 scroll-anim scroll-fade-left anim-delay-3">
-          <div class="flex gap-6 items-start group">
-            <div class="w-20 h-20 rounded-full bg-surface-container-highest flex items-center justify-center shrink-0 group-hover:bg-tertiary-fixed group-hover:text-white transition-colors duration-500 shadow-md">
-              <span class="material-symbols-outlined text-4xl">checkroom</span>
+        <div class="flex flex-col gap-4 scroll-anim scroll-fade-left anim-delay-3">
+          <div class="bg-white/40 dark:bg-white/5 backdrop-blur-md p-6 lg:p-8 rounded-[2rem] hover:-translate-x-2 transition-transform duration-500 shadow-xl border border-surface-variant/30 group flex gap-5 lg:gap-6 items-start">
+            <div class="w-14 h-14 lg:w-16 lg:h-16 rounded-2xl bg-tertiary-container/50 flex items-center justify-center shrink-0 group-hover:bg-tertiary-fixed transition-colors duration-500 shadow-sm">
+              <span class="material-symbols-outlined text-3xl lg:text-4xl text-on-tertiary-container group-hover:text-white transition-colors duration-500">checkroom</span>
             </div>
-            <div>
-              <h4 class="font-headline-sm text-3xl text-on-background mb-3 group-hover:text-tertiary-fixed transition-colors duration-300">Modest Attire</h4>
-              <p class="text-on-surface-variant font-body-sm text-lg leading-relaxed">Traditional or modest clothing is required. Shoulders and knees should be covered as a mark of respect for the divine space.</p>
-            </div>
-          </div>
-
-          <div class="flex gap-6 items-start group">
-            <div class="w-20 h-20 rounded-full bg-surface-container-highest flex items-center justify-center shrink-0 group-hover:bg-tertiary-fixed group-hover:text-white transition-colors duration-500 shadow-md">
-              <span class="material-symbols-outlined text-4xl">volume_off</span>
-            </div>
-            <div>
-              <h4 class="font-headline-sm text-3xl text-on-background mb-3 group-hover:text-tertiary-fixed transition-colors duration-300">Sacred Silence</h4>
-              <p class="text-on-surface-variant font-body-sm text-lg leading-relaxed">Maintain silence or speak softly to preserve the meditative atmosphere for all seekers and saints in prayer.</p>
+            <div class="flex flex-col">
+              <h3 class="font-headline-lg text-2xl lg:text-3xl text-on-background group-hover:text-tertiary-fixed transition-colors duration-300 mb-2">Modest Attire</h3>
+              <p class="text-on-surface-variant font-body-md text-base lg:text-lg leading-relaxed">
+                Traditional or modest clothing is required. Shoulders and knees should be covered as a mark of respect for the divine space.
+              </p>
             </div>
           </div>
 
-          <div class="flex gap-6 items-start group">
-            <div class="w-20 h-20 rounded-full bg-surface-container-highest flex items-center justify-center shrink-0 group-hover:bg-tertiary-fixed group-hover:text-white transition-colors duration-500 shadow-md">
-              <span class="material-symbols-outlined text-4xl">no_photography</span>
+          <div class="bg-white/40 dark:bg-white/5 backdrop-blur-md p-6 lg:p-8 rounded-[2rem] hover:-translate-x-2 transition-transform duration-500 shadow-xl border border-surface-variant/30 group flex gap-5 lg:gap-6 items-start">
+            <div class="w-14 h-14 lg:w-16 lg:h-16 rounded-2xl bg-tertiary-container/50 flex items-center justify-center shrink-0 group-hover:bg-tertiary-fixed transition-colors duration-500 shadow-sm">
+              <span class="material-symbols-outlined text-3xl lg:text-4xl text-on-tertiary-container group-hover:text-white transition-colors duration-500">volume_off</span>
             </div>
-            <div>
-              <h4 class="font-headline-sm text-3xl text-on-background mb-3 group-hover:text-tertiary-fixed transition-colors duration-300">Digital Fasting</h4>
-              <p class="text-on-surface-variant font-body-sm text-lg leading-relaxed">Photography is prohibited inside the inner sanctum. We encourage you to be fully present in the moment and absorb the energy.</p>
+            <div class="flex flex-col">
+              <h3 class="font-headline-lg text-2xl lg:text-3xl text-on-background group-hover:text-tertiary-fixed transition-colors duration-300 mb-2">Sacred Silence</h3>
+              <p class="text-on-surface-variant font-body-md text-base lg:text-lg leading-relaxed">
+                Maintain silence or speak softly to preserve the meditative atmosphere for all seekers and saints in prayer.
+              </p>
+            </div>
+          </div>
+
+          <div class="bg-white/40 dark:bg-white/5 backdrop-blur-md p-6 lg:p-8 rounded-[2rem] hover:-translate-x-2 transition-transform duration-500 shadow-xl border border-surface-variant/30 group flex gap-5 lg:gap-6 items-start">
+            <div class="w-14 h-14 lg:w-16 lg:h-16 rounded-2xl bg-tertiary-container/50 flex items-center justify-center shrink-0 group-hover:bg-tertiary-fixed transition-colors duration-500 shadow-sm">
+              <span class="material-symbols-outlined text-3xl lg:text-4xl text-on-tertiary-container group-hover:text-white transition-colors duration-500">no_photography</span>
+            </div>
+            <div class="flex flex-col">
+              <h3 class="font-headline-lg text-2xl lg:text-3xl text-on-background group-hover:text-tertiary-fixed transition-colors duration-300 mb-2">Digital Fasting</h3>
+              <p class="text-on-surface-variant font-body-md text-base lg:text-lg leading-relaxed">
+                Photography is prohibited inside the inner sanctum. We encourage you to be fully present in the moment and absorb the energy.
+              </p>
             </div>
           </div>
         </div>
@@ -218,7 +224,7 @@ export const aboutHtml = `
       <!-- Text Content -->
       <div class="w-full lg:w-1/2 flex flex-col justify-center scroll-anim scroll-fade-left">
         <span class="font-label-caps text-2xl md:text-4xl text-tertiary-fixed-dim uppercase tracking-[0.3em] mb-2">Selfless Service</span>
-        <h2 class="font-display-lg text-6xl md:text-8xl leading-tight text-on-background mb-4 scroll-anim scroll-reveal-text anim-delay-1">
+        <h2 class="font-display-lg text-7xl md:text-[6.5rem] lg:text-[7rem] leading-tight text-on-background mb-4 scroll-anim scroll-reveal-text anim-delay-1">
           Grace in <span class="italic font-['EB_Garamond'] text-[#954a3e]">Action</span>
         </h2>
         <p class="font-body-md text-xl md:text-2xl text-on-surface-variant leading-relaxed mb-2 scroll-anim scroll-fade-left anim-delay-2">
