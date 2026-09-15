@@ -1,23 +1,80 @@
 export const homeHtml = `
-<!-- TopNavBar -->
-<nav class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-margin-desktop py-6 bg-surface/90 border-b border-surface-variant/50 backdrop-blur-md">
-<a class="font-headline-md text-base md:text-2xl text-on-background hover:text-orange-500 transition-colors duration-300 uppercase tracking-widest hover:opacity-80 transition-opacity duration-300" href="#">
+<!-- Navigation -->
+<nav class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-6 md:px-12 py-4 bg-gradient-to-r from-[#4a2522] via-[#7d3c2b] to-[#4a2522] border-b border-white/20 shadow-xl backdrop-blur-md">
+    <a class="font-headline-md text-xl md:text-2xl text-[#ffdfba] hover:text-white transition-colors duration-300 uppercase tracking-widest flex items-center gap-2" href="/">
+        <span class="material-symbols-outlined text-3xl">temple_hindu</span>
         Temple Sanctuary
     </a>
-<div class="hidden md:flex items-center gap-gutter font-label-caps text-label-caps uppercase tracking-wider">
-<a aria-current="page" class="text-on-background hover:text-orange-500 transition-colors duration-300 border-b-2 border-tertiary-fixed-dim pb-1 translate-y-[-2px] transition-transform duration-300" href="/">Home</a>
-<a class="text-on-surface-variant hover:text-orange-500 transition-colors duration-300 hover:text-on-background transition-colors duration-300 hover:opacity-80" href="/about">About</a>
-<a class="text-on-surface-variant hover:text-orange-500 transition-colors duration-300 hover:text-on-background transition-colors duration-300 hover:opacity-80" href="/darshan">Darshan</a>
-<a class="text-on-surface-variant hover:text-orange-500 transition-colors duration-300 hover:text-on-background transition-colors duration-300 hover:opacity-80" href="/gallery">Gallery</a>
-<a class="text-on-surface-variant hover:text-orange-500 transition-colors duration-300 hover:text-on-background transition-colors duration-300 hover:opacity-80" href="/services">Services</a>
-<a class="text-on-surface-variant hover:text-orange-500 transition-colors duration-300 hover:text-on-background transition-colors duration-300 hover:opacity-80" href="/contact">Contact</a>
-</div>
-<button class="hidden md:inline-flex items-center justify-center bg-gradient-to-r from-tertiary-fixed to-tertiary-fixed-dim text-on-tertiary-fixed font-label-caps text-label-caps uppercase tracking-wider px-8 py-3 rounded-full shadow-md hover:shadow-xl hover:-translate-y-[2px] transition-all duration-500 border-2 border-tertiary-fixed-dim/50 ring-2 ring-tertiary-fixed/20">
-        Visit
-    </button>
-<button aria-label="Menu" class="md:hidden text-on-background hover:text-orange-500 transition-colors duration-300">
-<span class="material-symbols-outlined" style="font-size: 28px;">menu</span>
-</button>
+    <div class="hidden md:flex items-center gap-8 font-label-caps text-sm uppercase tracking-wider">
+        <a class="text-white/80 hover:text-[#ffdfba] transition-colors duration-300 relative group py-2" href="/">
+            Home
+            <span class="absolute bottom-0 left-0 w-full h-[2px] bg-[#ffdfba] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
+        </a>
+        
+        <div class="relative group py-2">
+            <a class="text-white/80 hover:text-[#ffdfba] transition-colors duration-300 flex items-center gap-1 cursor-pointer" href="/about">
+                About
+                <span class="material-symbols-outlined text-lg">arrow_drop_down</span>
+                <span class="absolute bottom-0 left-0 w-full h-[2px] bg-[#ffdfba] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
+            </a>
+            <div class="absolute top-full left-0 mt-2 w-48 bg-white/95 backdrop-blur-xl rounded-xl shadow-2xl border border-black/10 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 flex flex-col py-2 z-50">
+                <a href="/about#history" class="px-4 py-2 text-gray-800 hover:bg-orange-50 hover:text-orange-600 transition-colors">Our History</a>
+                <a href="/about#vision" class="px-4 py-2 text-gray-800 hover:bg-orange-50 hover:text-orange-600 transition-colors">Vision & Mission</a>
+                <a href="/about#guidelines" class="px-4 py-2 text-gray-800 hover:bg-orange-50 hover:text-orange-600 transition-colors">Guidelines</a>
+            </div>
+        </div>
+
+        <div class="relative group py-2">
+            <a class="text-white/80 hover:text-[#ffdfba] transition-colors duration-300 flex items-center gap-1 cursor-pointer" href="/darshan">
+                Darshan
+                <span class="material-symbols-outlined text-lg">arrow_drop_down</span>
+                <span class="absolute bottom-0 left-0 w-full h-[2px] bg-[#ffdfba] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
+            </a>
+            <div class="absolute top-full left-0 mt-2 w-48 bg-white/95 backdrop-blur-xl rounded-xl shadow-2xl border border-black/10 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 flex flex-col py-2 z-50">
+                <a href="/darshan#timings" class="px-4 py-2 text-gray-800 hover:bg-orange-50 hover:text-orange-600 transition-colors">Temple Timings</a>
+                <a href="/darshan#special" class="px-4 py-2 text-gray-800 hover:bg-orange-50 hover:text-orange-600 transition-colors">Special Darshan</a>
+            </div>
+        </div>
+
+        <div class="relative group py-2">
+            <a class="text-white/80 hover:text-[#ffdfba] transition-colors duration-300 flex items-center gap-1 cursor-pointer" href="/gallery">
+                Gallery
+                <span class="material-symbols-outlined text-lg">arrow_drop_down</span>
+                <span class="absolute bottom-0 left-0 w-full h-[2px] bg-[#ffdfba] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
+            </a>
+            <div class="absolute top-full left-0 mt-2 w-56 bg-white/95 backdrop-blur-xl rounded-xl shadow-2xl border border-black/10 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 flex flex-col py-2 z-50">
+                <a href="/gallery#unique-photos" class="px-4 py-2 text-gray-800 hover:bg-orange-50 hover:text-orange-600 transition-colors">Unique Perspectives</a>
+                <a href="/gallery#past-present" class="px-4 py-2 text-gray-800 hover:bg-orange-50 hover:text-orange-600 transition-colors">Past to Present</a>
+            </div>
+        </div>
+
+        <div class="relative group py-2">
+            <a class="text-white/80 hover:text-[#ffdfba] transition-colors duration-300 flex items-center gap-1 cursor-pointer" href="/services">
+                Services
+                <span class="material-symbols-outlined text-lg">arrow_drop_down</span>
+                <span class="absolute bottom-0 left-0 w-full h-[2px] bg-[#ffdfba] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
+            </a>
+            <div class="absolute top-full left-0 mt-2 w-56 bg-white/95 backdrop-blur-xl rounded-xl shadow-2xl border border-black/10 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 flex flex-col py-2 z-50">
+                <a href="/services#annadanam" class="px-4 py-2 text-gray-800 hover:bg-orange-50 hover:text-orange-600 transition-colors">Annadanam</a>
+                <a href="/services#medical" class="px-4 py-2 text-gray-800 hover:bg-orange-50 hover:text-orange-600 transition-colors">Medical Care</a>
+                <a href="/services#vidyalaya" class="px-4 py-2 text-gray-800 hover:bg-orange-50 hover:text-orange-600 transition-colors">Vedic Vidyalaya</a>
+            </div>
+        </div>
+
+        <a class="text-white/80 hover:text-[#ffdfba] transition-colors duration-300 relative group py-2" href="/contact">
+            Contact
+            <span class="absolute bottom-0 left-0 w-full h-[2px] bg-[#ffdfba] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
+        </a>
+    </div>
+    
+    <div class="flex items-center gap-4">
+        <a href="/donate" class="hidden md:inline-flex items-center justify-center bg-[#ffdfba] text-[#4a2522] font-label-caps text-sm uppercase tracking-wider px-6 py-2.5 rounded-full shadow-lg hover:bg-white hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300 font-bold">
+            Donate
+        </a>
+        <button aria-label="Menu" class="md:hidden text-[#ffdfba] hover:text-white transition-colors duration-300">
+            <span class="material-symbols-outlined" style="font-size: 28px;">menu</span>
+        </button>
+    </div>
 </nav>
 <main>
 <!-- Hero Section -->
@@ -30,9 +87,7 @@ export const homeHtml = `
 <p class="font-body-lg text-base mb-10 max-w-2xl mx-auto stagger-1 text-on-primary/90">
                 Where Tradition Meets Tranquility
             </p>
-<button class="bg-gradient-to-r from-tertiary-fixed to-tertiary-fixed-dim text-on-tertiary-fixed font-label-caps text-label-caps uppercase tracking-wider px-8 py-4 rounded-full hover:shadow-lg hover:-translate-y-[2px] transition-all duration-300 stagger-2 border border-tertiary-fixed-dim/20">
-                Visit Us
-            </button>
+<a href="/darshan" class="inline-block bg-gradient-to-r from-tertiary-fixed to-tertiary-fixed-dim text-on-tertiary-fixed font-label-caps text-label-caps uppercase tracking-wider px-8 py-4 rounded-full hover:shadow-lg hover:-translate-y-[2px] transition-all duration-300 stagger-2 border border-tertiary-fixed-dim/20">Visit Us</a>
 </div>
 </section>
 <!-- Feature Cards Section -->
@@ -47,7 +102,7 @@ export const homeHtml = `
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
       
       <!-- Card 1 -->
-      <div class="overlap-card group relative overflow-hidden rounded-[2.5rem] aspect-[3/4] shadow-2xl cursor-pointer border border-white/10">
+      <div onclick="window.location.href='/darshan'" class="overlap-card group relative overflow-hidden rounded-[2.5rem] aspect-[3/4] shadow-2xl cursor-pointer border border-white/10">
         <img src="/images/card_darshan.jpg" alt="Daily Darshan" class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110">
         <div class="absolute inset-0 bg-gradient-to-b from-black/10 via-black/40 to-black/90"></div>
         
@@ -124,9 +179,7 @@ export const homeHtml = `
       </p>
       
       <div>
-        <button class="bg-white/10 backdrop-blur-md text-white font-label-caps text-sm tracking-[0.1em] uppercase px-10 py-4 rounded-full shadow-[0_10px_20px_rgba(0,0,0,0.1)] hover:bg-white hover:text-[#954a3e] hover:shadow-[0_15px_30px_rgba(0,0,0,0.2)] hover:-translate-y-1 transition-all duration-300 border border-white/30">
-          Discover Our History
-        </button>
+        <a href="/about#history" class="inline-block bg-white/10 backdrop-blur-md text-white font-label-caps text-sm tracking-[0.1em] uppercase px-10 py-4 rounded-full shadow-[0_10px_20px_rgba(0,0,0,0.1)] hover:bg-white hover:text-[#954a3e] hover:shadow-[0_15px_30px_rgba(0,0,0,0.2)] hover:-translate-y-1 transition-all duration-300 border border-white/30">Discover Our History</a>
       </div>
     </div>
 
@@ -231,9 +284,7 @@ export const homeHtml = `
           </div>
         </div>
 
-        <button class="bg-white text-[#412726] font-label-caps text-sm tracking-[0.1em] uppercase px-8 py-4 rounded-full shadow-[0_10px_20px_rgba(0,0,0,0.1)] hover:shadow-[0_15px_30px_rgba(0,0,0,0.2)] hover:-translate-y-1 transition-all duration-300 font-bold">
-          Explore All Services
-        </button>
+        <a href="/services" class="inline-block bg-white text-[#412726] font-label-caps text-sm tracking-[0.1em] uppercase px-8 py-4 rounded-full shadow-[0_10px_20px_rgba(0,0,0,0.1)] hover:shadow-[0_15px_30px_rgba(0,0,0,0.2)] hover:-translate-y-1 transition-all duration-300 font-bold">Explore All Services</a>
       </div>
     </div>
 
@@ -250,7 +301,7 @@ export const homeHtml = `
 <section class="relative w-full min-h-[50vh] flex items-center justify-center overflow-hidden py-20 px-margin-mobile md:px-margin-desktop mt-12">
     <!-- God Background Image with Vibrant Overlay -->
     <div class="absolute inset-0 z-0">
-        <img alt="Book a Seva Deity" class="w-full h-full object-cover object-center transform scale-105" src="/images/book-seva-god.jpg">
+        <img alt="Book a Seva Deity" class="w-full h-full object-cover object-center transform scale-105" src="/images/generated_god.jpg">
         <!-- Overlay to match #412726 -->
         <div class="absolute inset-0 bg-[#412726]/60 mix-blend-multiply"></div>
         <div class="absolute inset-0 bg-[#412726]/70"></div>
@@ -270,9 +321,7 @@ export const homeHtml = `
             Participating in Seva is a profound way to connect with the divine. Offer your prayers remotely or in person, and receive divine blessings and prasadam at your doorstep.
         </p>
         
-        <button class="bg-white text-purple-700 font-label-caps text-label-caps uppercase tracking-wider px-10 py-5 rounded-full shadow-[0_10px_40px_rgba(168,85,247,0.6)] hover:shadow-[0_15px_50px_rgba(168,85,247,0.8)] hover:-translate-y-1 hover:bg-purple-50 transition-all duration-300 font-bold border-2 border-transparent hover:border-purple-200">
-            Initiate Booking
-        </button>
+        <a href="/contact" class="inline-block bg-white text-purple-700 font-label-caps text-label-caps uppercase tracking-wider px-10 py-5 rounded-full shadow-[0_10px_40px_rgba(168,85,247,0.6)] hover:shadow-[0_15px_50px_rgba(168,85,247,0.8)] hover:-translate-y-1 hover:bg-purple-50 transition-all duration-300 font-bold border-2 border-transparent hover:border-purple-200">Initiate Booking</a>
     </div>
 </section>
 <!-- Gallery Preview Section -->
@@ -297,9 +346,7 @@ export const homeHtml = `
 </div>
 </div>
 <div class="text-center fade-in-up visible">
-<button class="border-2 border-tertiary-fixed-dim text-on-background hover:text-orange-500 transition-colors duration-300 font-label-caps text-label-caps uppercase tracking-wider px-8 py-4 rounded-full hover:bg-tertiary-fixed-dim hover:text-on-tertiary-fixed transition-colors duration-300">
-                    View Full Gallery
-                </button>
+<a href="/gallery" class="inline-block border-2 border-tertiary-fixed-dim text-on-background hover:text-orange-500 transition-colors duration-300 font-label-caps text-label-caps uppercase tracking-wider px-8 py-4 rounded-full hover:bg-tertiary-fixed-dim hover:text-on-tertiary-fixed transition-colors duration-300">View Full Gallery</a>
 </div>
 </div>
 </section>
@@ -372,17 +419,19 @@ export const homeHtml = `
         <p class="font-body-lg text-base text-[#3d3d3d] mb-12 max-w-md mx-auto">
             Your generous contributions help maintain our sacred spaces and support our community outreach programs.
         </p>
-        <div class="flex flex-wrap justify-center gap-4 mb-8">
-            <button class="border-2 border-[#2d2d2d] text-[#2d2d2d] font-label-caps text-label-caps uppercase tracking-wider px-6 py-3 rounded-full hover:bg-[#2d2d2d] hover:text-white transition-colors duration-300 stagger-1">&#8377; 500</button>
-            <button class="border-2 border-[#2d2d2d] text-[#2d2d2d] font-label-caps text-label-caps uppercase tracking-wider px-6 py-3 rounded-full hover:bg-[#2d2d2d] hover:text-white transition-colors duration-300 stagger-2">&#8377; 1000</button>
-            <button class="border-2 border-[#2d2d2d] text-[#2d2d2d] font-label-caps text-label-caps uppercase tracking-wider px-6 py-3 rounded-full hover:bg-[#2d2d2d] hover:text-white transition-colors duration-300 stagger-3">&#8377; 2500</button>
-            <button class="border-2 border-[#2d2d2d] text-[#2d2d2d] font-label-caps text-label-caps uppercase tracking-wider px-6 py-3 rounded-full hover:bg-[#2d2d2d] hover:text-white transition-colors duration-300 stagger-4">&#8377; 5000</button>
+        
+        <div class="flex flex-wrap justify-center gap-4 mb-8" id="donation-buttons">
+            <button onclick="window.location.href='/donate?amount=500'" class="border-2 border-[#2d2d2d] text-[#2d2d2d] font-label-caps text-label-caps uppercase tracking-wider px-6 py-3 rounded-full hover:bg-[#2d2d2d] hover:text-white transition-colors duration-300 stagger-1">&#8377; 500</button>
+            <button onclick="window.location.href='/donate?amount=1000'" class="border-2 border-[#2d2d2d] text-[#2d2d2d] font-label-caps text-label-caps uppercase tracking-wider px-6 py-3 rounded-full hover:bg-[#2d2d2d] hover:text-white transition-colors duration-300 stagger-2">&#8377; 1000</button>
+            <button onclick="window.location.href='/donate?amount=2500'" class="border-2 border-[#2d2d2d] text-[#2d2d2d] font-label-caps text-label-caps uppercase tracking-wider px-6 py-3 rounded-full hover:bg-[#2d2d2d] hover:text-white transition-colors duration-300 stagger-3">&#8377; 2500</button>
+            <button onclick="window.location.href='/donate?amount=5000'" class="border-2 border-[#2d2d2d] text-[#2d2d2d] font-label-caps text-label-caps uppercase tracking-wider px-6 py-3 rounded-full hover:bg-[#2d2d2d] hover:text-white transition-colors duration-300 stagger-4">&#8377; 5000</button>
         </div>
         <div class="pt-8 border-t border-[#2d2d2d]/20 max-w-sm mx-auto">
-            <button class="w-full bg-[#111111] text-white font-label-caps text-label-caps uppercase tracking-wider px-8 py-4 rounded-full hover:bg-black hover:shadow-lg hover:-translate-y-[2px] transition-all duration-300">
+            <a href="/donate" class="inline-block w-full bg-[#111111] text-white font-label-caps text-label-caps uppercase tracking-wider px-8 py-4 rounded-full hover:bg-black hover:shadow-lg hover:-translate-y-[2px] transition-all duration-300 text-center">
                 Custom Amount
-            </button>
+            </a>
         </div>
+
       </div>
     </div>
   </div>
