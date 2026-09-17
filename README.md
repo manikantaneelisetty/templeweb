@@ -137,23 +137,18 @@ The user reported that page loading was taking excessive time. A technical diagn
 
 ---
 
-### 3. Temple-Themed Preloader (`src/components/ui/Preloader.tsx`)
+### 3. Sleek Golden Top-Bar Preloader (`src/components/ui/Preloader.tsx`)
 * **Feature Implemented**:
-  - Created a smooth, ceremonial loading preloader with a sacred temple motif and glowing radial backdrop.
-  - Features an animated golden progress bar with shimmer effect.
-  - Seamlessly dissolves with CSS `opacity-0 pointer-events-none scale-105 transition-all duration-700` as soon as the DOM and core assets are ready, preventing flash-of-unstyled-content (FOUC).
+  - Implemented an elegant, non-intrusive 3px golden progress bar at the very top of the viewport (similar to modern luxury web apps like GitHub and YouTube).
+  - Eliminates clumsy full-screen splash modals and avoids cluttering the user interface with redundant text overlays.
+  - Automatically animates on route navigation and fades out as soon as the view is ready.
 
 ---
 
-### 4. Devotional Skeleton Screen Loaders (`src/components/ui/Skeleton.tsx` & `src/app/loading.tsx`)
+### 4. Devotional Loading Indicator (`src/app/loading.tsx`)
 * **Feature Implemented**:
-  - Developed a comprehensive Skeleton component suite:
-    - `HeroSkeleton`: Shimmering banner with sacred badge and title placeholders.
-    - `CardGridSkeleton`: 4-column devotional card placeholders matching temple features.
-    - `ContentSkeleton`: Text paragraph, image, and button placeholders.
-    - `TimingsSkeleton`: Darshan schedule grid placeholders.
-    - `PageSkeleton`: Composite full-page skeleton.
-  - Integrated into Next.js App Router root `src/app/loading.tsx` to enable instant Suspense streaming during route transitions. Devotees see an elegant shimmering outline rather than an empty blank screen.
+  - Replaced bulky, jarring walls of grey rectangles with a subtle, devotional pulse indicator in `loading.tsx`.
+  - Seamlessly bridges page loads without creating sudden layout shifts or visual clutter.
 
 ---
 

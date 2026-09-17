@@ -115,9 +115,16 @@ export const aboutHtml = `
         </div>
       </div>
 
-      <!-- THE END SLOT FOR THE TRAVELING IMAGE -->
+      <!-- Left Side Image for Origins Section -->
       <div class="w-full lg:w-1/2 flex justify-start">
-        <div id="card-end-slot" class="w-full h-[60vh] lg:h-[80vh] max-w-[600px] rounded-[3rem] opacity-0 pointer-events-none"></div>
+        <div class="w-full h-[50vh] lg:h-[70vh] max-w-[550px] rounded-[3rem] overflow-hidden shadow-2xl border border-white/10 relative">
+          <img src="/images/about_history.jpg" alt="Temple History" class="w-full h-full object-cover">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
+          <div class="absolute bottom-10 left-10 text-white">
+            <h3 class="font-['EB_Garamond'] italic text-3xl text-[#ffdfba] mb-1">Sacred Foundations</h3>
+            <p class="font-label-caps text-xs tracking-widest uppercase opacity-80">Preserved Across Ages</p>
+          </div>
+        </div>
       </div>
 
     </div>
@@ -259,15 +266,6 @@ export const aboutHtml = `
 
     </div>
   </section>
-
-  <!-- THE TRAVELING CARD -->
-  <div id="traveling-card" class="fixed top-0 left-0 z-50 overflow-hidden shadow-2xl pointer-events-auto opacity-0" style="will-change: transform, width, height, border-radius; border-radius: 2.5rem; transition: opacity 0.3s ease;">
-    <img src="/images/gen_deity.jpg" alt="Pujaris" class="w-full h-full object-cover transition-transform duration-700 hover:scale-[1.03]">
-    <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
-    <div class="absolute bottom-10 text-center w-full text-white">
-      <h3 class="font-['EB_Garamond'] italic text-4xl">Devotion</h3>
-    </div>
-  </div>
 
 </main>
 

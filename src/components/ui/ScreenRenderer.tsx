@@ -24,15 +24,14 @@ export default function ScreenRenderer({ htmlContent }: Props) {
       .replace(/<iframe\b[^<]*(?:(?!<\/iframe>)<[^<]*)*<\/iframe>/gi, "");
   }, [htmlContent]);
 
-  // Handle routing, image optimization attributes, and DOM standardization
+  // Handle routing and performance optimization attributes on images
   useEffect(() => {
     const container = containerRef.current;
     if (!container) return;
 
-    // 1. Performance Optimization: Enforce native lazy loading and async decoding on all images
+    // 1. Enforce native lazy loading and async decoding on images
     const images = container.querySelectorAll<HTMLImageElement>("img");
     images.forEach((img, index) => {
-      // First 1-2 images above fold load eager, rest lazy-load
       const isHero = index < 2 || img.classList.contains("hero-bg");
       if (isHero) {
         img.loading = "eager";
@@ -43,7 +42,7 @@ export default function ScreenRenderer({ htmlContent }: Props) {
       }
     });
 
-    // 2. Intercept link and button clicks to provide client-side Next.js routing
+    // 2. Intercept internal links for client-side Next.js routing
     const handleClick = (e: MouseEvent) => {
       const target = e.target as HTMLElement;
       const clickable = target.closest("a, button");
@@ -72,26 +71,12 @@ export default function ScreenRenderer({ htmlContent }: Props) {
 
     container.addEventListener("click", handleClick);
 
-    // 3. Remove any duplicate navbars embedded in raw HTML strings
-    const navs = container.querySelectorAll("nav");
-    navs.forEach((nav) => nav.remove());
-
-    // 4. Standardize button styles across all pages
-    const premiumBtnClass =
-      "bg-gradient-to-r from-tertiary-fixed to-tertiary-fixed-dim text-on-tertiary-fixed font-label-caps text-label-caps uppercase tracking-wider px-8 py-3 rounded-full shadow-md hover:shadow-xl hover:-translate-y-[2px] transition-all duration-500 border-2 border-tertiary-fixed-dim/50 ring-2 ring-tertiary-fixed/20 inline-flex justify-center items-center cursor-pointer";
-    const buttons = container.querySelectorAll<HTMLElement>(
-      'button:not([aria-label="Menu"]), a.button, a[class*="bg-gradient"], button[class*="bg-"]'
-    );
-    buttons.forEach((btn) => {
-      btn.className = premiumBtnClass;
-    });
-
     return () => {
       container.removeEventListener("click", handleClick);
     };
   }, [router, sanitizedHtml]);
 
-  // Clean, memory-leak free IntersectionObserver for scroll animations (.scroll-anim & .fade-in-up)
+  // Clean, memory-leak free IntersectionObserver for scroll animations
   useEffect(() => {
     const container = containerRef.current;
     if (!container || !("IntersectionObserver" in window)) return;
@@ -118,7 +103,7 @@ export default function ScreenRenderer({ htmlContent }: Props) {
     };
   }, [sanitizedHtml]);
 
-  // Divine Stones interactive hover effect
+  // Divine Stones interactive hover effect (Home page)
   useEffect(() => {
     const container = containerRef.current;
     if (!container) return;
@@ -126,15 +111,17 @@ export default function ScreenRenderer({ htmlContent }: Props) {
     const divineCards = container.querySelectorAll<HTMLElement>(".divine-stone-card");
     const divineBgs = container.querySelectorAll<HTMLElement>(".divine-bg");
 
+    if (divineCards.length === 0 || divineBgs.length === 0) return;
+
     const handleMouseEnter = (e: Event) => {
       const card = e.currentTarget as HTMLElement;
       const index = card.getAttribute("data-index");
 
-      gsap.to(divineBgs, { opacity: 0, duration: 0.8, ease: "power2.inOut" });
+      gsap.to(divineBgs, { opacity: 0, duration: 0.5, ease: "power2.inOut" });
 
       const targetBg = Array.from(divineBgs).find((bg) => bg.getAttribute("data-index") === index);
       if (targetBg) {
-        gsap.to(targetBg, { opacity: 1, duration: 0.8, ease: "power2.inOut" });
+        gsap.to(targetBg, { opacity: 1, duration: 0.5, ease: "power2.inOut" });
       }
     };
 
@@ -145,124 +132,34 @@ export default function ScreenRenderer({ htmlContent }: Props) {
     };
   }, [sanitizedHtml]);
 
-  // Card Interactive Hover - SVG Running Outline without any 'any' type pollution
-  useEffect(() => {
-    const container = containerRef.current;
-    if (!container) return;
-
-    const allCards = container.querySelectorAll<HTMLElement>(".premium-card, .overlap-card");
-    const cardMap = new Map<HTMLElement, { onEnter: () => void; onLeave: () => void; svg: SVGElement }>();
-
-    allCards.forEach((card) => {
-      const svgNS = "http://www.w3.org/2000/svg";
-      const svg = document.createElementNS(svgNS, "svg");
-      svg.setAttribute("class", "absolute inset-0 w-full h-full pointer-events-none rounded-2xl");
-      svg.style.zIndex = "10";
-
-      const rect = document.createElementNS(svgNS, "rect");
-      rect.setAttribute("width", "100%");
-      rect.setAttribute("height", "100%");
-      rect.setAttribute("fill", "none");
-
-      const compStyle = window.getComputedStyle(card);
-      rect.setAttribute("rx", compStyle.borderRadius || "16px");
-      rect.setAttribute("stroke", "#f97316");
-      rect.setAttribute("stroke-width", "3");
-      rect.setAttribute("stroke-dasharray", "150 1500");
-
-      svg.appendChild(rect);
-
-      if (compStyle.position === "static") card.style.position = "relative";
-      card.appendChild(svg);
-
-      gsap.set(svg, { opacity: 0 });
-
-      const tl = gsap.timeline({ paused: true, repeat: -1 });
-      tl.fromTo(rect, { strokeDashoffset: 1650 }, { strokeDashoffset: 0, duration: 8, ease: "none" });
-
-      const onEnter = () => {
-        gsap.to(svg, { opacity: 1, duration: 0.3 });
-        gsap.to(card, { y: -4, boxShadow: "0 10px 25px -5px rgba(249, 115, 22, 0.15)", duration: 0.3 });
-        tl.play();
-      };
-      const onLeave = () => {
-        gsap.to(svg, { opacity: 0, duration: 0.3, onComplete: () => tl.pause() });
-        gsap.to(card, { y: 0, boxShadow: "none", duration: 0.3 });
-      };
-
-      card.addEventListener("mouseenter", onEnter);
-      card.addEventListener("mouseleave", onLeave);
-
-      cardMap.set(card, { onEnter, onLeave, svg });
-    });
-
-    return () => {
-      cardMap.forEach(({ onEnter, onLeave, svg }, card) => {
-        card.removeEventListener("mouseenter", onEnter);
-        card.removeEventListener("mouseleave", onLeave);
-        if (svg.parentNode === card) {
-          card.removeChild(svg);
-        }
-      });
-      cardMap.clear();
-    };
-  }, [sanitizedHtml]);
-
-  // GSAP scroll animations
+  // GSAP scroll entrance animations
   useGSAP(
     () => {
       const fadeElements = containerRef.current?.querySelectorAll<HTMLElement>(".fade-in-up");
 
       fadeElements?.forEach((el) => {
         let delay = 0;
-        if (el.classList.contains("stagger-1")) delay = 0.1;
-        if (el.classList.contains("stagger-2")) delay = 0.2;
-        if (el.classList.contains("stagger-3")) delay = 0.3;
-        if (el.classList.contains("stagger-4")) delay = 0.4;
+        if (el.classList.contains("stagger-1")) delay = 0.08;
+        if (el.classList.contains("stagger-2")) delay = 0.16;
+        if (el.classList.contains("stagger-3")) delay = 0.24;
+        if (el.classList.contains("stagger-4")) delay = 0.32;
 
         gsap.fromTo(
           el,
-          { opacity: 0, y: 50 },
+          { opacity: 0, y: 30 },
           {
             opacity: 1,
             y: 0,
-            duration: 1.2,
+            duration: 0.8,
             delay: delay,
-            ease: "power3.out",
+            ease: "power2.out",
             scrollTrigger: {
               trigger: el,
-              start: "top 85%",
+              start: "top 88%",
               toggleActions: "play none none none",
             },
           }
         );
-      });
-
-      const images = gsap.utils.toArray<HTMLImageElement>("img:not(.hero-bg)");
-      images.forEach((img) => {
-        gsap.from(img, {
-          scale: 1.05,
-          duration: 1.5,
-          ease: "power2.out",
-          scrollTrigger: {
-            trigger: img,
-            start: "top 95%",
-          },
-        });
-      });
-
-      const heroSections = containerRef.current?.querySelectorAll<HTMLElement>('section[style*="background-image"]');
-      heroSections?.forEach((hero) => {
-        gsap.to(hero, {
-          backgroundPosition: "50% " + window.innerHeight / 2 + "px",
-          ease: "none",
-          scrollTrigger: {
-            trigger: hero,
-            start: "top top",
-            end: "bottom top",
-            scrub: true,
-          },
-        });
       });
     },
     { scope: containerRef }

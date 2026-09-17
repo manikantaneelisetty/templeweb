@@ -5,7 +5,7 @@ export const homeHtml = `
 <section class="min-h-[90vh] pt-40 pb-56 px-margin-mobile md:px-margin-desktop text-center bg-surface relative flex flex-col justify-center items-center bg-cover bg-center" style="background-image: url('/images/gen_home_hero.jpg');">
 <div class="absolute inset-0 bg-gradient-to-b from-black/60 to-black/20"></div>
 <div class="max-w-4xl fade-in-up relative z-10 text-on-primary visible">
-<h1 class="font-display-lg-mobile md:font-display-lg text-4xl md:text-6xl leading-tight-mobile md:text-4xl md:text-6xl leading-tight mb-6 text-tertiary-fixed drop-shadow-md">
+<h1 class="font-['EB_Garamond'] text-4xl md:text-6xl font-semibold leading-tight mb-6 text-[#ffdfba] drop-shadow-md">
                 A Sanctuary for the Soul
             </h1>
 <p class="font-body-lg text-base mb-10 max-w-2xl mx-auto stagger-1 text-on-primary/90">
@@ -16,12 +16,6 @@ export const homeHtml = `
 </section>
 <!-- Feature Cards Section -->
 <section class="w-full relative z-20 bg-gradient-to-br from-[#4a2522] via-[#7d3c2b] to-[#a45437] pt-20 pb-32 px-6 md:px-16 rounded-b-[2rem] md:rounded-b-[4rem] shadow-[0_30px_50px_rgba(0,0,0,0.4)] overflow-hidden mb-24 -mt-1">
-  
-  <!-- Background Script Overlay -->
-  <div class="absolute bottom-8 right-6 md:bottom-12 md:right-16 opacity-25 pointer-events-none select-none">
-    <span class="font-['EB_Garamond'] italic text-3xl md:text-[5rem] text-[#ffdfba] whitespace-nowrap tracking-wider drop-shadow-lg">you are always welcome here!</span>
-  </div>
-
   <div class="w-full relative z-10">
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
       
@@ -362,12 +356,12 @@ export const homeHtml = `
 </section>
 </main>
 <!-- Footer -->
-<footer class="w-full px-margin-desktop py-section-gap flex flex-col md:flex-row justify-between items-start gap-gutter bg-surface-container-lowest text-on-background hover:text-orange-500 transition-colors duration-300 border-t border-surface-variant">
+<footer class="w-full px-margin-desktop py-section-gap flex flex-col md:flex-row justify-between items-start gap-gutter bg-surface-container-lowest text-on-background border-t border-surface-variant">
 <div class="flex flex-col gap-4">
-<div class="font-headline-sm text-sm md:text-base text-on-background hover:text-orange-500 transition-colors duration-300">
+<div class="font-headline-sm text-sm md:text-base text-on-background">
             Temple Sanctuary
         </div>
-<p class="font-body-md text-sm text-on-surface-variant hover:text-orange-500 transition-colors duration-300 max-w-sm">
+<p class="font-body-md text-sm text-on-surface-variant max-w-sm">
             123 Sacred Path, Banjara Hills<br>
             Hyderabad, Telangana 500034<br>
             info@templesanctuary.org
@@ -375,23 +369,16 @@ export const homeHtml = `
 </div>
 <div class="flex flex-col md:flex-row gap-8 md:gap-16">
 <div class="flex flex-col gap-3 font-label-caps text-label-caps uppercase tracking-wider">
-<a class="text-on-surface-variant hover:text-orange-500 transition-colors duration-300 hover:text-tertiary-fixed-dim transition-colors duration-300" href="#">Privacy Policy</a>
-<a class="text-on-surface-variant hover:text-orange-500 transition-colors duration-300 hover:text-tertiary-fixed-dim transition-colors duration-300" href="#">Terms of Service</a>
+<a class="text-on-surface-variant hover:text-orange-500 transition-colors duration-300" href="/about">About Us</a>
+<a class="text-on-surface-variant hover:text-orange-500 transition-colors duration-300" href="/darshan">Darshan Timings</a>
 </div>
 <div class="flex flex-col gap-3 font-label-caps text-label-caps uppercase tracking-wider">
-<a class="text-on-surface-variant hover:text-orange-500 transition-colors duration-300 hover:text-tertiary-fixed-dim transition-colors duration-300" href="#">Volunteer</a>
-<a class="text-on-surface-variant hover:text-orange-500 transition-colors duration-300 hover:text-tertiary-fixed-dim transition-colors duration-300" href="#">Support</a>
+<a class="text-on-surface-variant hover:text-orange-500 transition-colors duration-300" href="/services">Sacred Seva</a>
+<a class="text-on-surface-variant hover:text-orange-500 transition-colors duration-300" href="/donate">Support Sanctuary</a>
 </div>
 </div>
-<div class="w-full md:w-auto mt-8 md:mt-0 pt-8 md:pt-0 border-t border-surface-variant md:border-none font-body-md text-sm text-on-surface-variant hover:text-orange-500 transition-colors duration-300">
-        Â© 2024 Divine Sanctuary Temple. All Rights Reserved.
-    </div>
+<div class="w-full md:w-auto mt-8 md:mt-0 pt-8 md:pt-0 border-t border-surface-variant md:border-none font-body-md text-sm text-on-surface-variant">
+  © 2026 Temple Sanctuary. All Rights Reserved.
+</div>
 </footer>
-
-
-
-
-
-
-
 `;
