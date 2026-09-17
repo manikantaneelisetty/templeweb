@@ -36,7 +36,7 @@ export const darshanHtml = `
       </div>
       <div class="w-full lg:w-1/2 relative h-[50vh] lg:h-[80vh] scroll-anim scroll-fade-up anim-delay-2">
         <div class="absolute inset-0 rounded-[3rem] overflow-hidden shadow-2xl transition-transform duration-700 hover:scale-[1.02]">
-          <img src="/images/generated_god.jpg" alt="Divine Darshan" class="w-full h-full object-cover">
+          <img src="/images/gen_deity.jpg" alt="Divine Darshan" class="w-full h-full object-cover">
           <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
         </div>
       </div>
@@ -75,7 +75,7 @@ export const darshanHtml = `
       </div>
       <div class="w-full lg:w-1/2 relative h-[50vh] lg:h-[80vh] scroll-anim scroll-fade-up anim-delay-2">
         <div class="absolute inset-0 rounded-[3rem] overflow-hidden shadow-2xl transition-transform duration-700 hover:scale-[1.02]">
-          <img src="/images/aarti.jpg" alt="Aarti Timings" class="w-full h-full object-cover">
+          <img src="/images/gen_festival.jpg" alt="Aarti Timings" class="w-full h-full object-cover">
         </div>
       </div>
     </div>
@@ -105,7 +105,7 @@ export const darshanHtml = `
       </div>
       <div class="w-full lg:w-1/2 relative h-[50vh] lg:h-[80vh] scroll-anim scroll-fade-up anim-delay-2">
         <div class="absolute inset-0 rounded-[3rem] overflow-hidden shadow-2xl transition-transform duration-700 hover:scale-[1.02]">
-          <img src="/images/special_darshan.jpg" alt="Special Darshan" class="w-full h-full object-cover">
+          <img src="/images/gen_unique.jpg" alt="Special Darshan" class="w-full h-full object-cover">
         </div>
       </div>
     </div>

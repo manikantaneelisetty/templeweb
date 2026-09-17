@@ -53,7 +53,7 @@ export const aboutHtml = `
         
         <!-- Image 1: Left (stays in Hero) -->
         <div class="w-full md:w-1/3 h-[300px] md:h-[450px] rounded-[3rem] transform md:translate-y-12 overflow-hidden shadow-xl transition-transform duration-700 hover:scale-[1.03] relative z-10">
-          <img src="/images/about_history.jpg" class="w-full h-full object-cover">
+          <img src="/images/gen_history.jpg" class="w-full h-full object-cover">
           <div class="absolute inset-0 bg-gradient-to-t from-[#4a2522]/80 via-transparent to-transparent"></div>
           <div class="absolute bottom-8 left-8 text-white">
             <h3 class="font-['EB_Garamond'] italic text-4xl mb-1 text-[#ffdfba]">Ancient Roots</h3>
@@ -64,7 +64,7 @@ export const aboutHtml = `
         <!-- Image 2: Center (THE START SLOT FOR THE TRAVELING IMAGE) -->
         <!-- Contains a visually identical SSR fallback image in case JS is delayed/fails -->
         <div id="card-start-slot" class="w-full md:w-1/3 h-[300px] md:h-[450px] rounded-[3rem] overflow-hidden shadow-2xl z-10 transition-opacity duration-300 relative">
-          <img src="/images/about_pujaris.jpg" alt="Pujaris" class="w-full h-full object-cover">
+          <img src="/images/gen_deity.jpg" alt="Pujaris" class="w-full h-full object-cover">
           <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
           <div class="absolute bottom-10 text-center w-full text-white">
             <h3 class="font-['EB_Garamond'] italic text-4xl">Devotion</h3>
@@ -179,7 +179,7 @@ export const aboutHtml = `
       <!-- Elevated Image Layout -->
       <div class="w-full lg:w-1/2 relative h-[50vh] lg:h-[80vh] scroll-anim scroll-fade-up anim-delay-2">
         <div class="absolute inset-0 rounded-[3rem] overflow-hidden shadow-2xl transition-transform duration-700 hover:scale-[1.02] bg-surface">
-          <img src="/images/about_rules.jpg" alt="Devotees sitting peacefully" class="w-full h-full object-cover">
+          <img src="/images/gen_home_hero.jpg" alt="Devotees sitting peacefully" class="w-full h-full object-cover">
           <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
         </div>
         <div class="absolute -bottom-6 -left-6 md:-left-12 bg-surface p-6 md:p-8 rounded-3xl shadow-2xl border border-surface-variant animate-[bounce_5s_infinite]">
@@ -248,7 +248,7 @@ export const aboutHtml = `
       <!-- Elevated Image Layout -->
       <div class="w-full lg:w-1/2 relative h-[50vh] lg:h-[80vh] scroll-anim scroll-fade-up anim-delay-2">
         <div class="absolute inset-0 rounded-[3rem] overflow-hidden shadow-[0_30px_60px_rgba(0,0,0,0.2)] transition-transform duration-700 hover:scale-[1.02]">
-          <img src="/images/about_services.jpg" alt="Temple Services Annadanam" class="w-full h-full object-cover">
+          <img src="/images/gen_vidyalaya.jpg" alt="Temple Services Annadanam" class="w-full h-full object-cover">
           <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"></div>
           <div class="absolute bottom-12 right-12 text-white text-right">
             <h3 class="font-['EB_Garamond'] italic text-4xl mb-2">Seva</h3>
@@ -262,7 +262,7 @@ export const aboutHtml = `
 
   <!-- THE TRAVELING CARD -->
   <div id="traveling-card" class="fixed top-0 left-0 z-50 overflow-hidden shadow-2xl pointer-events-auto opacity-0" style="will-change: transform, width, height, border-radius; border-radius: 2.5rem; transition: opacity 0.3s ease;">
-    <img src="/images/about_pujaris.jpg" alt="Pujaris" class="w-full h-full object-cover transition-transform duration-700 hover:scale-[1.03]">
+    <img src="/images/gen_deity.jpg" alt="Pujaris" class="w-full h-full object-cover transition-transform duration-700 hover:scale-[1.03]">
     <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
     <div class="absolute bottom-10 text-center w-full text-white">
       <h3 class="font-['EB_Garamond'] italic text-4xl">Devotion</h3>

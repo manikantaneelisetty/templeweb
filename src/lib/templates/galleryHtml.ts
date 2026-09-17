@@ -43,10 +43,10 @@ export const galleryHtml = `
       <div class="w-full lg:w-1/2 relative h-[50vh] lg:h-[80vh] scroll-anim scroll-fade-up anim-delay-2">
         <div class="grid grid-cols-2 gap-4 h-full">
             <div class="rounded-3xl overflow-hidden shadow-xl transform translate-y-8 hover:scale-[1.02] transition-transform duration-500">
-                <img src="/images/temple1.jpg" alt="Temple" class="w-full h-full object-cover">
+                <img src="/images/gen_home_hero.jpg" alt="Temple" class="w-full h-full object-cover">
             </div>
             <div class="rounded-3xl overflow-hidden shadow-xl transform -translate-y-8 hover:scale-[1.02] transition-transform duration-500">
-                <img src="/images/gods1.jpg" alt="Gods" class="w-full h-full object-cover">
+                <img src="/images/gen_deity.jpg" alt="Gods" class="w-full h-full object-cover">
             </div>
         </div>
       </div>
@@ -75,7 +75,7 @@ export const galleryHtml = `
       </div>
       <div class="w-full lg:w-1/2 relative h-[50vh] lg:h-[80vh] scroll-anim scroll-fade-up anim-delay-2">
         <div class="absolute inset-0 rounded-[3rem] overflow-hidden shadow-2xl transition-transform duration-700 hover:scale-[1.02]">
-          <img src="/images/unique_angle.jpg" alt="Unique Photo" class="w-full h-full object-cover">
+          <img src="/images/gen_unique.jpg" alt="Unique Photo" class="w-full h-full object-cover">
           <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
         </div>
       </div>
@@ -110,10 +110,10 @@ export const galleryHtml = `
       <div class="w-full lg:w-1/2 relative h-[50vh] lg:h-[80vh] scroll-anim scroll-fade-up anim-delay-2">
         <div class="grid grid-rows-2 gap-4 h-full">
             <div class="rounded-3xl overflow-hidden shadow-xl hover:scale-[1.02] transition-transform duration-500">
-                <img src="/images/festival_day.jpg" alt="Festival Day" class="w-full h-full object-cover">
+                <img src="/images/gen_festival.jpg" alt="Festival Day" class="w-full h-full object-cover">
             </div>
             <div class="rounded-3xl overflow-hidden shadow-xl hover:scale-[1.02] transition-transform duration-500">
-                <img src="/images/festival_night.jpg" alt="Festival Night" class="w-full h-full object-cover">
+                <img src="/images/gen_annadanam.jpg" alt="Festival Night" class="w-full h-full object-cover">
             </div>
         </div>
       </div>
@@ -141,7 +141,7 @@ export const galleryHtml = `
       </div>
       <div class="w-full lg:w-1/2 relative h-[50vh] lg:h-[80vh] scroll-anim scroll-fade-up anim-delay-2">
         <div class="absolute inset-0 rounded-[3rem] overflow-hidden shadow-2xl transition-transform duration-700 hover:scale-[1.02]">
-          <img src="/images/past_present.jpg" alt="Past to Present" class="w-full h-full object-cover">
+          <img src="/images/gen_history.jpg" alt="Past to Present" class="w-full h-full object-cover">
         </div>
       </div>
     </div>

@@ -2,7 +2,7 @@ export const homeHtml = `
 
 <main>
 <!-- Hero Section -->
-<section class="min-h-[90vh] pt-40 pb-56 px-margin-mobile md:px-margin-desktop text-center bg-surface relative flex flex-col justify-center items-center bg-cover bg-center" style="background-image: url('/images/hero.jpg');">
+<section class="min-h-[90vh] pt-40 pb-56 px-margin-mobile md:px-margin-desktop text-center bg-surface relative flex flex-col justify-center items-center bg-cover bg-center" style="background-image: url('/images/gen_home_hero.jpg');">
 <div class="absolute inset-0 bg-gradient-to-b from-black/60 to-black/20"></div>
 <div class="max-w-4xl fade-in-up relative z-10 text-on-primary visible">
 <h1 class="font-display-lg-mobile md:font-display-lg text-4xl md:text-6xl leading-tight-mobile md:text-4xl md:text-6xl leading-tight mb-6 text-tertiary-fixed drop-shadow-md">
@@ -27,7 +27,7 @@ export const homeHtml = `
       
       <!-- Card 1 -->
       <div onclick="window.location.href='/darshan'" class="overlap-card group relative overflow-hidden rounded-[2.5rem] aspect-[3/4] shadow-2xl cursor-pointer border border-white/10">
-        <img src="/images/card_darshan.jpg" alt="Daily Darshan" class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110">
+        <img src="/images/gen_deity.jpg" alt="Daily Darshan" class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110">
         <div class="absolute inset-0 bg-gradient-to-b from-black/10 via-black/40 to-black/90"></div>
         
         <div class="absolute inset-0 p-8 flex flex-col justify-between text-white z-10">
@@ -38,7 +38,7 @@ export const homeHtml = `
 
       <!-- Card 2 -->
       <div class="overlap-card group relative overflow-hidden rounded-[2.5rem] aspect-[3/4] shadow-2xl cursor-pointer border border-white/10">
-        <img src="/images/card_worship.jpg" alt="Book Seva" class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110">
+        <img src="/images/gen_vidyalaya.jpg" alt="Book Seva" class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110">
         <div class="absolute inset-0 bg-gradient-to-b from-black/10 via-black/40 to-black/90"></div>
         
         <div class="absolute inset-0 p-8 flex flex-col justify-between text-white z-10">
@@ -60,7 +60,7 @@ export const homeHtml = `
 
       <!-- Card 4 -->
       <div class="overlap-card group relative overflow-hidden rounded-[2.5rem] aspect-[3/4] shadow-2xl cursor-pointer border border-white/10">
-        <img src="/images/journey.jpg" alt="Volunteer" class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110">
+        <img src="/images/gen_history.jpg" alt="Volunteer" class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110">
         <div class="absolute inset-0 bg-gradient-to-b from-black/10 via-black/40 to-black/90"></div>
         
         <div class="absolute inset-0 p-8 flex flex-col justify-between text-white z-10">
@@ -80,7 +80,7 @@ export const homeHtml = `
     <div class="w-full lg:w-[40%] relative group fade-in-up visible flex justify-center">
       <div class="absolute -inset-4 bg-gradient-to-r from-white/20 to-white/10 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
       <div class="relative rounded-[2rem] overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.3)] border border-white/20 aspect-[4/5] w-full max-w-[600px]">
-        <img src="/images/gallery1.jpg" alt="Temple Architecture" class="w-full h-full object-cover hover:scale-105 transition-transform duration-1000">
+        <img src="/images/gen_festival.jpg" alt="Temple Architecture" class="w-full h-full object-cover hover:scale-105 transition-transform duration-1000">
       </div>
       <!-- Decorative floating badge -->
       <div class="absolute -bottom-8 -right-4 lg:-right-8 bg-[#7a3c32] p-6 lg:p-8 rounded-[2rem] shadow-2xl border border-white/20 hidden md:block z-10 group-hover:-translate-y-2 transition-transform duration-500">
@@ -257,13 +257,13 @@ export const homeHtml = `
 </div>
 <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
 <div class="aspect-square bg-surface border border-surface-variant overflow-hidden rounded-2xl shadow-sm fade-in-up stagger-1 visible">
-<img alt="Temple view 1" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" src="/images/gallery1.jpg">
+<img alt="Temple view 1" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" src="/images/gen_festival.jpg">
 </div>
 <div class="aspect-square bg-surface border border-surface-variant overflow-hidden rounded-2xl shadow-sm fade-in-up stagger-2 visible">
-<img alt="Temple view 2" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" src="/images/gallery2.jpg">
+<img alt="Temple view 2" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" src="/images/gen_unique.jpg">
 </div>
 <div class="aspect-square bg-surface border border-surface-variant overflow-hidden rounded-2xl shadow-sm fade-in-up stagger-3 visible">
-<img alt="Temple view 3" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" src="/images/gallery3.jpg">
+<img alt="Temple view 3" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" src="/images/gen_annadanam.jpg">
 </div>
 <div class="aspect-square bg-surface border border-surface-variant overflow-hidden rounded-2xl shadow-sm fade-in-up stagger-4 visible">
 <img alt="Temple view 4" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" src="/images/gallery4.jpg">

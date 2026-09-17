@@ -58,7 +58,7 @@ export const servicesHtml = `
       </div>
       <div class="w-full lg:w-1/2 relative h-[50vh] lg:h-[80vh] scroll-anim scroll-fade-up anim-delay-2">
         <div class="absolute inset-0 rounded-[3rem] overflow-hidden shadow-2xl transition-transform duration-700 hover:scale-[1.02]">
-          <img src="/images/about_services.jpg" alt="Annadanam" class="w-full h-full object-cover">
+          <img src="/images/gen_annadanam.jpg" alt="Annadanam" class="w-full h-full object-cover">
         </div>
       </div>
     </div>
@@ -87,7 +87,7 @@ export const servicesHtml = `
       </div>
       <div class="w-full lg:w-1/2 relative h-[50vh] lg:h-[80vh] scroll-anim scroll-fade-up anim-delay-2">
         <div class="absolute inset-0 rounded-[3rem] overflow-hidden shadow-2xl transition-transform duration-700 hover:scale-[1.02]">
-          <img src="/images/medical.jpg" alt="Medical Camp" class="w-full h-full object-cover">
+          <img src="/images/gen_medical.jpg" alt="Medical Camp" class="w-full h-full object-cover">
         </div>
       </div>
     </div>
@@ -116,7 +116,7 @@ export const servicesHtml = `
       </div>
       <div class="w-full lg:w-1/2 relative h-[50vh] lg:h-[80vh] scroll-anim scroll-fade-up anim-delay-2">
         <div class="absolute inset-0 rounded-[3rem] overflow-hidden shadow-2xl transition-transform duration-700 hover:scale-[1.02]">
-          <img src="/images/education.jpg" alt="Vedic Vidyalaya" class="w-full h-full object-cover">
+          <img src="/images/gen_vidyalaya.jpg" alt="Vedic Vidyalaya" class="w-full h-full object-cover">
         </div>
       </div>
     </div>
@@ -139,7 +139,7 @@ export const servicesHtml = `
       </div>
       <div class="w-full lg:w-1/2 relative h-[50vh] lg:h-[80vh] scroll-anim scroll-fade-up anim-delay-2">
         <div class="absolute inset-0 rounded-[3rem] overflow-hidden shadow-2xl transition-transform duration-700 hover:scale-[1.02]">
-          <img src="/images/volunteer.jpg" alt="Volunteering" class="w-full h-full object-cover">
+          <img src="/images/gen_festival.jpg" alt="Volunteering" class="w-full h-full object-cover">
           <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
         </div>
       </div>

@@ -234,11 +234,11 @@ export default function ScreenRenderer({ htmlContent }: Props) {
 
 
   return (
-    <div 
-      ref={containerRef} 
+    <div
+      ref={containerRef}
       className="w-full min-h-screen template-container pt-[88px]"
-      dangerouslySetInnerHTML={{ __html: htmlContent }} 
+      dangerouslySetInnerHTML={{ __html: htmlContent }}
+      suppressHydrationWarning
     />
   );
 }
-
