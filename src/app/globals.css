@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap");
 @import "tailwindcss";
 
 :root {
@@ -68,13 +69,14 @@
   --radius-lg: 0.5rem;
   --radius-xl: 0.75rem;
   --radius-full: 9999px;
-  --font-label-caps: "EB Garamond";
+  --font-label-caps: var(--font-garamond), "EB Garamond", serif;
   --font-display-lg-mobile: "Myriad Pro", Myriad, sans-serif;
   --font-headline-md: "Myriad Pro", Myriad, sans-serif;
-  --font-body-md: "EB Garamond";
-  --font-body-lg: "EB Garamond";
+  --font-body-md: var(--font-garamond), "EB Garamond", serif;
+  --font-body-lg: var(--font-garamond), "EB Garamond", serif;
   --font-display-lg: "Myriad Pro", Myriad, sans-serif;
   --font-headline-sm: "Myriad Pro", Myriad, sans-serif;
+  --font-caslon: var(--font-caslon), "Libre Caslon Text", serif;
 }
 
 @media (prefers-color-scheme: dark) {
