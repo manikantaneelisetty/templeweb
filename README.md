@@ -198,14 +198,17 @@ The user reported that page loading was taking excessive time. A technical diagn
 
 | # | Issue Faced | Root Cause | Technical Solution Applied |
 |---|-------------|------------|----------------------------|
-| **1** | **PowerShell Execution Policy Block** | Windows PowerShell blocks unsigned `.ps1` scripts (`npm : File cannot be loaded... PSSecurityException`). | Used `npm.cmd` directly in automated execution tasks, bypassing shell script policy restrictions cleanly. |
-| **2** | **43 ESLint Failures Across Codebase** | Root folder contained 29 legacy utility/migration `.js` scripts using CommonJS `require()`, which ESLint 9 + TypeScript flagged as errors. | Updated `eslint.config.mjs` to add `"*.js"` to `globalIgnores`, isolating the application source code in `src/` while allowing legacy root migration files to remain undisturbed. |
+| **1** | **PowerShell Execution Policy Block (`npm.ps1`)** | Windows PowerShell blocks unsigned `.ps1` scripts (`npm : File cannot be loaded because running scripts is disabled... PSSecurityException`). | Run `Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy RemoteSigned` in PowerShell, or run commands via `npm.cmd` (e.g. `npm.cmd run dev`). |
+| **2** | **43 ESLint Failures & Cluttered Repository** | Root folder contained 29 legacy scratch/migration `.js` scripts using CommonJS `require()`, which were dead code and triggered ESLint errors. | Completely removed all 29 unreferenced legacy migration scripts and scratch files, cleaning up the root directory and ensuring 100% clean linting across the codebase. |
 | **3** | **Script Injection XSS in ScreenRenderer** | Previous code dynamically parsed `<script>` tags from raw HTML and re-injected them into the document to run animations. | Removed the script execution loop. Added a regex sanitization pipeline to strip `<script>` and `<iframe>` tags. Transferred scroll detection into a React-managed `IntersectionObserver`. |
 | **4** | **10Hz CPU Thrashing from Polling Intervals** | Six HTML template files had `setInterval(initObserver, 100);` running without unmount handlers or cleanup. | Removed all inline `<script>` tags from templates. Centralized scroll triggers into a single `useEffect` with `observer.disconnect()` on unmount. |
 | **5** | **CSS `@import` Order Warning in Turbopack** | Next.js 16 build flagged a warning: `@import rules must precede all rules aside from @charset and @layer`. The font `@import` was placed below Tailwind import. | Moved `@import url(...)` to the very first line of `src/app/globals.css`, satisfying CSS specifications and eliminating build warnings. |
 | **6** | **Google Fonts Render-Blocking Warnings** | Fonts were linked via raw `<link>` tags in `<head>`, triggering `@next/next/no-page-custom-font` warnings and slowing initial paint. | Migrated to Next.js native `next/font/google` (`EB_Garamond` and `Libre_Caslon_Text`), using CSS variables linked to Tailwind tokens with `display: swap`. |
 | **7** | **Heavy 26.5MB Initial Image Download** | 27 images in `public/images/` were stored as uncompressed 1MB+ JPEGs and loaded synchronously in raw `<img>` tags. | Executed an automated batch optimization script using `sharp` (MozJPEG progressive compression, 82% quality), cutting total folder size to 5.72 MB (78.3% savings). Dynamically injected `loading="lazy"` and `decoding="async"`. |
 | **8** | **Missing 404 & Unhandled `/events` Route** | Clicking on festival/event buttons attempted to navigate to `/events`, which did not exist, triggering default Next.js 404s. | Implemented a dedicated `src/app/events/page.tsx` and custom `src/app/not-found.tsx` with temple branding and navigation paths. |
+| **9** | **Windows Application Control / Smart App Control Blocking Native DLLs** | Windows 11 Smart App Control / WDAC User Mode Code Integrity (UMCI status 2) enforces strict blocking on unsigned/untrusted native `.node` binaries (`@next/swc-win32-x64-msvc` and `@tailwindcss/oxide`), throwing `ERR_DLOPEN_FAILED: An Application Control policy has blocked this file`. | Configured Next.js to run with WebAssembly (WASM) fallback via `--webpack`, and transitioned styling to a 100% pure JavaScript Tailwind architecture (`tailwindcss` + `postcss` + `autoprefixer`), completely eliminating native `.node` binaries. |
+| **10** | **Turbopack Incompatibility with WASM Fallback** | Next.js 16 defaults to Turbopack (`next dev` and `next build`). Turbopack strictly requires native SWC bindings and crashes if only WASM bindings are loaded (`Error: Turbopack is not supported on this platform because native bindings are not available`). | Configured `package.json` scripts to use the `--webpack` compiler flag: `"dev": "next dev --webpack -H 0.0.0.0"` and `"build": "next build --webpack"`. |
+| **11** | **Native Rust / WebAssembly WASI Fragility on Windows** | Tailwind CSS v4 relies on `@tailwindcss/oxide` (Rust native DLL or experimental WASI). On Windows, native DLLs are blocked by OS security policy, while WASI directory scanning fails across Windows drive letters (`D:\...`), requiring fragile monkey patching. | Permanently migrated to the robust, pure JavaScript Tailwind CSS architecture with a dedicated `tailwind.config.ts`. Eliminates all native dependencies, monkey patches, and `--force` npm install workarounds. |
 
 ---
 
@@ -217,7 +220,8 @@ The user reported that page loading was taking excessive time. A technical diagn
 | **Initial Viewport Image Payload** | ~18.5 MB | < 600 KB | **~96.8% faster initial paint** |
 | **Background Thread Intervals** | 6 active `setInterval` (10Hz) | 0 infinite intervals | **100% CPU thrash eliminated** |
 | **ESLint Errors & Warnings** | 43 Errors, 9 Warnings | **0 Errors, 0 Warnings** | **100% Clean Linting** |
-| **Production Build Status** | Font & CSS warnings | **Clean Build (558ms compilation)** | **Zero warnings** |
+| **Production Build Status** | Failed on Windows App Control | **Clean Build (HTTP 200 OK)** | **Zero errors, Pure JS styling** |
+| **Legacy Code Clutter** | 29 scratch scripts in root | **0 unused scripts (100% clean)** | **Streamlined repository** |
 | **HTTP Security Headers** | 0 headers configured | CSP, HSTS, X-Frame, Nosniff, Referrer | **A+ Security Grade** |
 | **XSS Attack Surface** | Vulnerable (executable `<script>`) | Fully sanitized & script-stripped | **Hardened against XSS** |
 | **Error Handling (404/Crash)** | Default unstyled Next.js error | Custom Devotional 404 & Error Boundaries | **Seamless Pilgrim UX** |
@@ -227,28 +231,60 @@ The user reported that page loading was taking excessive time. A technical diagn
 
 ## 💻 Developer & Deployment Guide
 
+### Windows Setup & Prerequisites
+
+#### 1. Enable Script Execution in PowerShell
+If running `npm` commands produces the error:
+`File C:\Program Files\nodejs\npm.ps1 cannot be loaded because running scripts is disabled on this system.`
+Run this command once in PowerShell:
+```powershell
+Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy RemoteSigned
+```
+*Alternatively, you can always invoke npm using `npm.cmd` instead of `npm`:*
+```powershell
+npm.cmd run dev
+```
+
+#### 2. Installing Dependencies
+Standard, clean dependency installation (zero native binary flags or `--force` needed):
+```powershell
+npm install
+# or in Windows PowerShell:
+npm.cmd install
+```
+
+---
+
 ### Running in Development
 ```bash
 npm run dev
-# Starts Turbopack dev server on http://localhost:3000
+# or in Windows PowerShell:
+npm.cmd run dev
+# Starts the Webpack dev server on http://localhost:3000 (accessible on network at 0.0.0.0)
 ```
 
 ### Running Linter
 ```bash
 npm run lint
+# or in Windows PowerShell:
+npm.cmd run lint
 # Confirms zero errors and zero warnings
 ```
 
 ### Building for Production
 ```bash
 npm run build
-# Generates optimized static pages with Turbopack
+# or in Windows PowerShell:
+npm.cmd run build
+# Generates optimized static pages with Next.js Webpack and pure JS styling
 ```
 
 ### Starting Production Server
 ```bash
 npm run start
-# Runs the Next.js production server
+# or in Windows PowerShell:
+npm.cmd run start
+# Runs the Next.js production server on http://localhost:3000
 ```
 
 ---
